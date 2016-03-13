@@ -1,86 +1,86 @@
 .rcorners1 {
     border-radius: 25px;
     background: #73AD21;
-    padding: 20px; 
+    padding: 20px;
     width: 200px;
-    height: 150px;    
+    height: 150px;
 }
 
 /*Login css*/
 
-.logi-btnp
-{
-	width: 80%;
-	height: 40px;
-	background-color:#FF6600;
-	border-radius:20px;
-	border-color:#1B2C3B;
-	color: #FFF;
-	font-size: 14px;
-	font-weight: bold;
+.logi-btnp {
+    width: 80%;
+    height: 40px;
+    background-color: #FF6600;
+    border-radius: 20px;
+    border-color: #1B2C3B;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: bold;
 }
 
-.logi-btnn
-{
-	width: 100%;
-	height: 40px;
-	background-color:#009900;
-	border-color: #1B2C3B;
-	color: #FFF;
-	font-size: 19px;
-	font-weight: bold;
+.logi-btnn {
+    width: 100%;
+    height: 40px;
+    background-color: #009900;
+    border-color: #1B2C3B;
+    color: #FFF;
+    font-size: 19px;
+    font-weight: bold;
 }
 
-.log-in{
-	background-image:url(images/icons/ic_launcher.png);
+.log-in {
+    background-image: url(images/icons/ic_launcher.png);
 }
 
-.login-mob{
-	height: 45px;
-	border-radius: 0px;
+.login-mob {
+    height: 45px;
+    border-radius: 0px;
 
 }
-.input-group-addon{
-	border-radius: 0px;
+
+.input-group-addon {
+    border-radius: 0px;
 }
 
-.log-content{
-	padding-top: 90px;
+.log-content {
+    padding-top: 90px;
 }
 
-.log-logo{
-	padding-bottom: 50px;
+.log-logo {
+    padding-bottom: 50px;
 }
 
-.form-pay{
-	margin-top: 50px;
-}
-.btn-mkpay{
-	width: 100%;
-	background-color: #CC2C12;
-	border-radius: 0px;
+.form-pay {
+    margin-top: 50px;
 }
 
-.logi-btn
-{
-	width: 80%;
-	height: 40px;
-	background-color:#009933;
-	border-radius:20px;
-	border-color:#1B2C3B;
-	color: #FFF;
-	font-size: 14px;
-	font-weight: bold;
+.btn-mkpay {
+    width: 100%;
+    background-color: #CC2C12;
+    border-radius: 0px;
 }
 
-.otp-btn{
-	width: 100%;
-	height: 40px;
-	background-color: #2993C5;
-	border-color: #1B2C3B;
+.logi-btn {
+    width: 80%;
+    height: 40px;
+    background-color: #009933;
+    border-radius: 20px;
+    border-color: #1B2C3B;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: bold;
 }
-.log-btn{
-	padding-top: 30px;
+
+.otp-btn {
+    width: 100%;
+    height: 40px;
+    background-color: #2993C5;
+    border-color: #1B2C3B;
+}
+
+.log-btn {
+    padding-top: 30px;
 }
 
 .panel-default {
@@ -88,209 +88,205 @@
 }
 
 .panel-footer {
-	padding: 1px 15px;
-	color: #A0A0A0;
+    padding: 1px 15px;
+    color: #A0A0A0;
 }
 
 .profile-img {
-	width: 96px;
-	height: 96px;
-	margin: 0 auto 10px;
-	display: block;
-	-moz-border-radius: 50%;
-	-webkit-border-radius: 50%;
-	border-radius: 50%;
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
 }
 
-.btn-login{
-	height: 35px;
-	width: 100%;
-	background-color: #5469C8;
-	color: #fff;
+.btn-login {
+    height: 35px;
+    width: 100%;
+    background-color: #5469C8;
+    color: #fff;
 }
 
-.btn-signup{
-	height: 35px;
-	width: 100%;
-	background-color: #405C93;
-	color: #fff;
+.btn-signup {
+    height: 35px;
+    width: 100%;
+    background-color: #405C93;
+    color: #fff;
 }
 
 .panel-default > .panel-heading {
-    
+
     text-align: center;
     padding: 5px 15px;
-	margin-right: 15px;
-	margin-left: 15px;
-	border-radius: 4px;
-	background-color: transparent;
-	border-color: transparent;
-	font-size: 25px;
+    margin-right: 15px;
+    margin-left: 15px;
+    border-radius: 4px;
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 25px;
 }
 
-.email-addon{
-	padding: 6px 10px;
+.email-addon {
+    padding: 6px 10px;
 }
-.login-form{
-	position: relative;
-	top: 50px;
+
+.login-form {
+    position: relative;
+    top: 50px;
 
 }
 
 /*Login css end*/
 
-
 .header {
-	border-color: #dddddd;
-	background:#002C21 none repeat scroll 0% 0%;
-	min-height:50px;
-	max-height:50px;
+    border-color: #dddddd;
+    background: #002C21 none repeat scroll 0% 0%;
+    min-height: 50px;
+    max-height: 50px;
 }
 
 .header1 {
-	border-top:px solid #A9B1D7  !important;
-	background:#FFFFFF;
+    border-top: px solid #A9B1D7 !important;
+    background: #FFFFFF;
 }
 
 .header2 {
-	border: solid 1px #ddd !important;
-	height:535px;
-	overflow:scroll;	
+    border: solid 1px #ddd !important;
+    height: 535px;
+    overflow: scroll;
 }
 
 .header3 {
-	border: solid 1px !important;
-	border-color: #dddddd;
-	background:#000000;
-	max-height:20px;
-	min-height:20px;
+    border: solid 1px !important;
+    border-color: #dddddd;
+    background: #000000;
+    max-height: 20px;
+    min-height: 20px;
 }
 
 .tabmenu {
-	border: solid 1px #ddd !important;
+    border: solid 1px #ddd !important;
 }
 
 .logo {
-margin-top:5px;
+    margin-top: 5px;
 }
 
 .status {
-margin-top:10px;
-color:#DDD;
+    margin-top: 10px;
+    color: #DDD;
 }
-.search1{
-	height: 34px;
-	border:1px solid #547A70;
-	background-color: #57B7B4;
+
+.search1 {
+    height: 34px;
+    border: 1px solid #547A70;
+    background-color: #57B7B4;
 }
+
 .search {
-	background-color: transparent;
-	font-size: 23px;
-	font-weight: bold;
-	color: #FFF;
-	border: 0px none;
+    background-color: transparent;
+    font-size: 23px;
+    font-weight: bold;
+    color: #FFF;
+    border: 0px none;
 }
+
 .order {
-	position: relative;
-	height: 34px;
+    position: relative;
+    height: 34px;
 }
 
-.pay-btn{
-	position: relative;
-	height: 100%;
-	width: 100%;
-	background-color: rgb(171, 78, 28);
-	color: #FFF;
-	border: 1px solid rgb(171, 78, 28);
-	height: 50px;
-	font-size: 20px;
+.pay-btn {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(171, 78, 28);
+    color: #FFF;
+    border: 1px solid rgb(171, 78, 28);
+    height: 50px;
+    font-size: 20px;
 }
 
-.chk-btn{
-	position: relative;
-	height: 100%;
-	width: 100%;
-	background-color: #4C8990;
-	color: #FFF;
-	border: 1px solid #4C8990 !important;
+.chk-btn {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: #4C8990;
+    color: #FFF;
+    border: 1px solid #4C8990 !important;
 }
+
 .total {
-	position: relative;
+    position: relative;
     display: inline-block;
     height: 34px;
-	font-size:12px;
+    font-size: 12px;
 
 }
 
 .table > tbody > tr > td {
-     vertical-align: middle;
+    vertical-align: middle;
 }
 
-
-.btn-primary{
-	border-radius: 0px;
+.btn-primary {
+    border-radius: 0px;
 }
 
+@media (min-width: 500px) {
 
+    .btn-qty {
+        width: 100%;
+        height: 30px;
+        font-size: 12px;
+    }
 
-@media(min-width: 500px){
-
-.btn-qty{
-		width: 100%;
-		height: 30px;
-		font-size: 12px;
-}
-
-.btn-cal{
-		width: 100%;
-		height: 30px;
-		 padding-right: 8px;
-		 padding-left: 8px;
-		margin-bottom: 0px;
-}
-
+    .btn-cal {
+        width: 100%;
+        height: 30px;
+        padding-right: 8px;
+        padding-left: 8px;
+        margin-bottom: 0px;
+    }
 
 }
 
-@media(max-width: 500px){
+@media (max-width: 500px) {
 
-	.btn-qty{
-		width: 100%;
-		height: 30px;
-		font-size: 9px;
-	}
+    .btn-qty {
+        width: 100%;
+        height: 30px;
+        font-size: 9px;
+    }
 
+    .btn-cal {
+        height: 26px;
+        margin-bottom: 0;
+        margin-top: 0;
+        padding: 2px 10px;
+        width: 100%;
+        text-align: center;
+    }
 
-	.btn-cal{
-		height: 26px;
-	    margin-bottom: 0;
-	    margin-top: 0;
-	    padding: 2px 10px;
-	    width: 100%;
-	    text-align: center;
-	}
-	
-	.spn-qty{
-		padding-top: 2px;
-		padding-bottom: 2px;
-	}
-	.btn-min{
-		margin-top: 2px;
-	}
-	
-	
-	.total
-	{
-	font-size:11px;
-	}
+    .spn-qty {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+    .btn-min {
+        margin-top: 2px;
+    }
+
+    .total {
+        font-size: 11px;
+    }
 
 }
 
-.row-one{
-	border-bottom: 1px solid #ddd !important;
+.row-one {
+    border-bottom: 1px solid #ddd !important;
 }
-
-
 
 .btn-primary {
     color: #FFF;
@@ -298,16 +294,16 @@ color:#DDD;
     border-color: #5BA3E1;
 }
 
-.row-one{
-border: 0px solid #20DD29 !important;
+.row-one {
+    border: 0px solid #20DD29 !important;
 }
 
-@media(max-width: 410px){
-	.nav > li > a {
-    position: relative;
-    display: block;
-    padding: 8px 7px;
-}
+@media (max-width: 410px) {
+    .nav > li > a {
+        position: relative;
+        display: block;
+        padding: 8px 7px;
+    }
 }
 
 .radio, .checkbox {
@@ -318,204 +314,215 @@ border: 0px solid #20DD29 !important;
 /*Dropdown menus*/
 
 .dropDownMenu a {
-	color:#FFFFFF;
+    color: #FFFFFF;
 }
+
 .dropDownMenu,
 .dropDownMenu ul {
 
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-.dropDownMenu li {
-	position: relative;
-}
-.dropDownMenu a {
-	padding: 5px;
-	
-}
-.dropDownMenu a:hover {
-	
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
+.dropDownMenu li {
+    position: relative;
+}
+
+.dropDownMenu a {
+    padding: 5px;
+
+}
+
+.dropDownMenu a:hover {
+
+}
 
 /* Level 1 Drop Down Menu */
 .dropDownMenu > li {
-line-height:30px;
-	display: inline-block;
-	vertical-align: top;
-	margin-left: -4px; /* solve the 4 pixels spacing between list-items */
+    line-height: 30px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: -4px; /* solve the 4 pixels spacing between list-items */
 }
+
 .dropDownMenu > li:first-child {
-	margin-left: 0;
+    margin-left: 0;
 }
-.dropDownMenu > li > a {}
-.dropDownMenu > li > a:hover {}
 
+.dropDownMenu > li > a {
+}
 
+.dropDownMenu > li > a:hover {
+}
 
 /* Level 2 */
 .dropDownMenu > li > ul {
-	text-align: left;
-	display: none;
-	background:#337AB7;
-	position: absolute;
-	top: 100%;
-	left: 0;
-	z-index: 9999999; /* if you have YouTube iframes, is good to have a bigger z-index so the video can appear above the video */
+    text-align: left;
+    display: none;
+    background: #337AB7;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 9999999; /* if you have YouTube iframes, is good to have a bigger z-index so the video can appear above the video */
 }
+
 .dropDownMenu > li:hover > ul {
-	display: block;
-	
+    display: block;
+
 }
-.dropDownMenu ul li a {}
-.dropDownMenu ul li a:hover {}
 
+.dropDownMenu ul li a {
+}
 
+.dropDownMenu ul li a:hover {
+}
 
 /* Level 3 */
 .dropDownMenu > li > ul > li > ul {
-	text-align: left;
-	display: none;
-	background:#6AACE6;
-	position: absolute;
-	left: 100%;
-	top: 0;
-	z-index: 9999999;
+    text-align: left;
+    display: none;
+    background: #6AACE6;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    z-index: 9999999;
 }
-.dropDownMenu > li > ul > li:hover > ul {
-	display: block;
-}
-.dropDownMenu ul ul li {}
-.dropDownMenu ul ul li a {}
-.dropDownMenu ul ul li a:hover {}
 
+.dropDownMenu > li > ul > li:hover > ul {
+    display: block;
+}
+
+.dropDownMenu ul ul li {
+}
+
+.dropDownMenu ul ul li a {
+}
+
+.dropDownMenu ul ul li a:hover {
+}
 
 /*chkbox*/
 .change-row-border {
-		border-bottom: 1px solid #FFF !important;
-    	border-top: 1px solid #FFF !important;
-		border-left:1px solid #FFF !important;
-		border-right:1px solid #FFF !important;
-		background-color:#00FF00;
-}
-.header2{
-margin-top:143px;
+    border-bottom: 1px solid #FFF !important;
+    border-top: 1px solid #FFF !important;
+    border-left: 1px solid #FFF !important;
+    border-right: 1px solid #FFF !important;
+    background-color: #00FF00;
 }
 
-.btn-add, .btn-min{
-	cursor: pointer;
+.header2 {
+    margin-top: 143px;
+}
+
+.btn-add, .btn-min {
+    cursor: pointer;
 }
 
 .btn-add:hover,
 .btn-add:focus,
 .btn-min:hover,
 .btn-min:focus {
-  background-color: #23527c;
-  text-decoration: underline;
+    background-color: #23527c;
+    text-decoration: underline;
 }
 
-.btn-add,.btn-min {
+.btn-add, .btn-min {
     display: inline-block;
 
 }
 
-
-.row-sum{
-	margin-right: 15px;
-	margin-left: 15px;
+.row-sum {
+    margin-right: 15px;
+    margin-left: 15px;
 }
 
 .header2_order {
-	
-	margin-top:84px;
+
+    margin-top: 84px;
 }
+
 .row_header {
-background:#6AACE6;
+    background: #6AACE6;
 }
 
-.fa-arrow-left{
-color:#000000;
+.fa-arrow-left {
+    color: #000000;
 
 }
-
-
 
 .heading {
 
-background-color:#868686;
-color:#FFFFFF;
+    background-color: #868686;
+    color: #FFFFFF;
 }
 
-.btn-payment{
-	background-color:#F04545;
-	height:35px;
-	border-radius: 0px;
-	width:100%;
-	
+.btn-payment {
+    background-color: #F04545;
+    height: 35px;
+    border-radius: 0px;
+    width: 100%;
+
 }
 
-.btn-payment >span{
-	color:#fff;
-	font-size:18px;
+.btn-payment > span {
+    color: #fff;
+    font-size: 18px;
 }
 
-
-
-.summ-tot{
-	margin-top: 15px;
-	margin-bottom: 15px;
+.summ-tot {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
-
-
-
 
 .dropbtn {
-    background-color:#57B7B4;
+    background-color: #57B7B4;
     color: white;
-    font-size:12px;
+    font-size: 12px;
     border: 1px solid #547A70;
     cursor: pointer;
-	height: 100%;
-	width: 100%;
+    height: 100%;
+    width: 100%;
 }
 
 .dropbtn:hover, .dropbtn:focus {
-    background-color:#FFFFFF;
-	color:#000000;
+    background-color: #FFFFFF;
+    color: #000000;
 }
 
 .dropdown {
-	height: 34px;
+    height: 34px;
 }
 
-@media(max-width: 450px){
-	#myDropdown{
-		right: -81px;
-	}
-	.dropdown-content {
-   margin-left:-70px;
-    display: none;
-    position: absolute;
-	background-color: #f9f9f9;
-    min-width: 228px;
-          max-width: 228px;
+@media (max-width: 450px) {
+    #myDropdown {
+        right: -81px;
+    }
 
-	z-index:99999;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    .dropdown-content {
+        margin-left: -70px;
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 228px;
+        max-width: 228px;
+
+        z-index: 99999;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
 }
-}
+
 .dropdown-content {
     display: none;
     position: absolute;
-	background-color: #f9f9f9;
+    background-color: #f9f9f9;
     min-width: 228px;
-          max-width: 228px;
+    max-width: 228px;
 
-	z-index:99999;
+    z-index: 99999;
     overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown-content a {
@@ -524,94 +531,92 @@ color:#FFFFFF;
     display: block;
 }
 
-.dropdown a:hover {background-color: #f1f1f1}
+.dropdown a:hover {
+    background-color: #f1f1f1
+}
 
 .show {
 
-	display:block;
+    display: block;
 }
 
-.row-com{
-	display: block;
-	border: 1px solid #ddd;
+.row-com {
+    display: block;
+    border: 1px solid #ddd;
 }
 
 /*Decription popup-----sharmi----*/
 .add-head {
-width:150px;
-height:20px;
-border:solid 1px;
-background-color:#CCCCCC;
-text-align:center;
+    width: 150px;
+    height: 20px;
+    border: solid 1px;
+    background-color: #CCCCCC;
+    text-align: center;
 }
+
 .add-item {
-width:150px;
-height:20px;
-text-align:center;
+    width: 150px;
+    height: 20px;
+    text-align: center;
 
 }
+
 .des-cursor {
-cursor:pointer;
+    cursor: pointer;
 }
-
-
-
-
 
 /*cart popup styles*/
 
-.btn-cart{
-	width:88%;
-	height:33px;
-	background-color: #DDD;
-	color: #000;
+.btn-cart {
+    width: 88%;
+    height: 33px;
+    background-color: #DDD;
+    color: #000;
 }
 
-.btn-cart:hover{
-	background-color: #DDD;
-	color: #000;
+.btn-cart:hover {
+    background-color: #DDD;
+    color: #000;
 }
 
-
-.product-cat-des{
-	background-color: #A8BFD7;
-	height: 17px;
+.product-cat-des {
+    background-color: #A8BFD7;
+    height: 17px;
 }
 
-.product-cat-des-name >h5{
-	font-weight: bold;
-	color: #CB8E8E;
-	margin-left: 5px;
-	margin-top: 0px;
-	margin-bottom: 0px;
+.product-cat-des-name > h5 {
+    font-weight: bold;
+    color: #CB8E8E;
+    margin-left: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
-.product-cat-des-item{
-	font-weight: bold;
-	color: #CB8E8E;
-	margin-right: 5px;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	font-size: 12px;
-} 
-
-.prd-itm{
-	max-height: 100px;
+.product-cat-des-item {
+    font-weight: bold;
+    color: #CB8E8E;
+    margin-right: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 12px;
 }
 
-
-.prd-des{
-	padding-left: 15px;
+.prd-itm {
+    max-height: 100px;
 }
 
-.prd-des > h6{
-	margin-bottom: 0px;
-	margin-top: 0px;
+.prd-des {
+    padding-left: 15px;
 }
 
-.prd-des > h4{
-	margin-bottom: 2px;
-	margin-top: 0px;
+.prd-des > h6 {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.prd-des > h4 {
+    margin-bottom: 2px;
+    margin-top: 0px;
 }
 
 .prd-des > h4, .h4, h5, .h5, h6, .h6 {
@@ -623,95 +628,91 @@ cursor:pointer;
     font-size: 11px;
 }
 
+@media (max-width: 400px) {
+    .prd-des {
+        padding-left: 25px;
+    }
 
-@media(max-width: 400px){
-	.prd-des{
-	padding-left: 25px;
-}
+    .prd-des > h6 {
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
 
-.prd-des > h6{
-	margin-bottom: 0px;
-	margin-top: 0px;
-}
+    .prd-des > h4 {
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
 
-.prd-des > h4{
-	margin-bottom: 0px;
-	margin-top: 0px;
-}
+    .prd-des > h5 {
+        margin-bottom: 0px;
+        margin-top: 5px;
+        font-size: 11px;
+    }
 
-.prd-des > h5{
-	margin-bottom: 0px;
-	margin-top: 5px;
-	font-size: 11px;
-}
+    .prd-des > h5 {
+        font-size: 11px;
+    }
 
-.prd-des > h5 {
-    font-size: 11px;
-}
-
-.prd-itm{
-	max-height: 100px;
-}
-
-}
-
-.products-list-items{
-	border-bottom: 1px solid #DDD !important;
-}
-
-.prd-itm{
-	border-bottom: 1px solid #DDD !important;
+    .prd-itm {
+        max-height: 100px;
+    }
 
 }
 
-
-.che-cal-btn{
-	margin-top: 17px;
-	margin-left: 19px;
+.products-list-items {
+    border-bottom: 1px solid #DDD !important;
 }
 
-.delete-btn{
-	float: right;
-	
+.prd-itm {
+    border-bottom: 1px solid #DDD !important;
+
 }
 
-.cart-img{
-	width: 50px;
-	height: 52px;
+.che-cal-btn {
+    margin-top: 17px;
+    margin-left: 19px;
 }
 
-.fa{
-	cursor: pointer;
+.delete-btn {
+    float: right;
+
 }
 
-
-.btn-checkout{
-	background-color: red;
-	
-	height: 40px;
-	width: 100%
+.cart-img {
+    width: 50px;
+    height: 52px;
 }
 
-.total-bill{
-	margin-top: 25px;
-	border: 1px solid #DDD !important;
+.fa {
+    cursor: pointer;
 }
 
-.chek-box{
-	background-color: #DDD;
+.btn-checkout {
+    background-color: red;
+
+    height: 40px;
+    width: 100%
 }
+
+.total-bill {
+    margin-top: 25px;
+    border: 1px solid #DDD !important;
+}
+
+.chek-box {
+    background-color: #DDD;
+}
+
 /*popup coding end */
 
-
-
-.menuitemshow{
-	background-color: #DDD;
+.menuitemshow {
+    background-color: #DDD;
 }
 
-.btn-mkpay{
-.padding: 0px 5px;
-margin-bottom: 0px;
-font-size: 20px;
-font-weight: bold;
-color: #FFF;
+.btn-mkpay {
+. padding: 0 px 5 px;
+    margin-bottom: 0px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFF;
 }
