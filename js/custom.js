@@ -12,3 +12,5 @@ $(function () {
 $('#edit-member-bck-btn').on('click', function () {
     window.location.href = "adminhome.php";
 });
+
+fdslajflasdjlj
