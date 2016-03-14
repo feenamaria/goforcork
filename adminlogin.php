@@ -1,3 +1,12 @@
+<?php
+session_start();
+$userid = $_SESSION['user'];
+if (!$userid) {
+    echo "<script>
+		window.location.href='index.php?u=expired';
+		</script>";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

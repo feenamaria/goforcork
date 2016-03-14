@@ -1,3 +1,13 @@
+<?php
+session_start();
+$userid = $_SESSION['user'];
+//TODO: Check whether admin or not
+if (!$userid) {
+    echo "<script>
+		window.location.href='index.php?u=expired';
+		</script>";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

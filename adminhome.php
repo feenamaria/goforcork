@@ -1,4 +1,15 @@
+<!--.TODO Remove Add Boxes-->
 <!DOCTYPE html>
+<?php
+session_start();
+$userid = $_SESSION['user'];
+//TODO: Check whether admin or not
+if (!$userid) {
+    echo "<script>
+		window.location.href='index.php?u=expired';
+		</script>";
+}
+?>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -152,6 +163,7 @@
         </div>
     </div>
 </div>
+
 <!-- Core JavaScript
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

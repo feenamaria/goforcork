@@ -7,9 +7,10 @@ if ($_POST["membername"]) {
     $mobnum = $_POST['mobilenumber'];
     $sponsor = $_POST['sponsor'];
     if ($sponsor == 'yes') {
-        if (mysql_query("INSERT INTO memberdetails(name,mobilenum,admin,sponsor,nboxes,ncorks,password,amountdue) VALUES('$membername','$mobnum','no','$sponsor','nil','nil','sponsor','nil')")) ;
+//        TODO: Remove if and make it proper
+        if (mysql_query("INSERT INTO memberdetails(name,mobilenum,admin,sponsor,password,amountdue) VALUES('$membername','$mobnum','no','$sponsor','sponsor','nil')")) ;
     } else {
-        if (mysql_query("INSERT INTO memberdetails(name,mobilenum,admin,sponsor,nboxes,ncorks,password,amountdue) VALUES('$membername','$mobnum','no','no','nil','nil','nil','nil')")) ;
+        if (mysql_query("INSERT INTO memberdetails(name,mobilenum,admin,sponsor,password,amountdue) VALUES('$membername','$mobnum','no','no','nil','nil')")) ;
     }
 };
 ?>

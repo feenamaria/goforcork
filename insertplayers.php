@@ -1,52 +1,36 @@
+<!--TODO: in DB which ever field got int/float values(which are used to calculation) should be default 0, Also validate inputs, number only accpeted. dont accept stings-->
 <?php
-      	session_start();
-        include('db.php');
-        $membername1 = $_POST['membername1'];
-		$membername2 = $_POST['membername2'];
-		$membername3 = $_POST['membername3'];
-		$membername4 = $_POST['membername4'];
-        $sql = mysql_query(" INSERT INTO corkdistribution (date,player1,player2,player3,player4) VALUES (current_date,'$membername1','$membername2','$membername3','$membername4') ");   
-		
-		
-		$sqlretrive = mysql_query("SELECT * FROM memberdetails WHERE name='$membername1'");
-		$row=mysql_fetch_array($sqlretrive);
-		$n = $row['ncorks'];
-		$m = $row['nboxes'];
-		$ncorksnew = $n - 1;
-		$ncorksby10 = $ncorksnew % 10;
-		//echo $ncorksby10;
-		if($ncorksby10 != 0)
-		{
-		$nbox = $m - 1;
-		echo $nbox;
-		$sqlnewupdate = mysql_query("UPDATE memberdetails SET nboxes='$nbox',ncorks='$ncorksnew' WHERE name='$membername1' ") ;
-		}
-		else
-		{
-		$sqlnewupdate = mysql_query("UPDATE memberdetails SET ncorks='$ncorksnew' WHERE name='$membername1' ") ;
-		}
-		
-		
-		$sqlretrive = mysql_query("SELECT * FROM memberdetails WHERE name='$membername2'");
-		$row=mysql_fetch_array($sqlretrive);
-		$n = $row['ncorks'];
-		$ncorksnew = $n - 1;
-		$sqlnewupdate = mysql_query("UPDATE memberdetails SET ncorks='$ncorksnew' WHERE name='$membername2' ") ;
-		
-		$sqlretrive = mysql_query("SELECT * FROM memberdetails WHERE name='$membername3'");
-		$row=mysql_fetch_array($sqlretrive);
-		$n = $row['ncorks'];
-		$ncorksnew = $n - 1;
-		$sqlnewupdate = mysql_query("UPDATE memberdetails SET ncorks='$ncorksnew' WHERE name='$membername3' ") ;
-		
-		$sqlretrive = mysql_query("SELECT * FROM memberdetails WHERE name='$membername4'");
-		$row=mysql_fetch_array($sqlretrive);
-		$n = $row['ncorks'];
-		$ncorksnew = $n - 1;
-		$sqlnewupdate = mysql_query("UPDATE memberdetails SET ncorks='$ncorksnew' WHERE name='$membername4' ") ;
-		
+session_start();
+include('db.php');
+$memberid1 = $_POST['memberid1'];
+$memberid2 = $_POST['memberid2'];
+$memberid3 = $_POST['memberid3'];
+$memberid4 = $_POST['memberid4'];
+$corkid = $_POST['corkid'];
+
+$sql = mysql_query(" SELECT * FROM corkpossession WHERE id='$corkid';");
+$row = mysql_fetch_array($sql);
+$sponsorid = $row['memberid'];
+$current_corkcnt = $row['corkcnt'];
+$unitprice = $row['unitprice'];
+mysql_query(" UPDATE corkpossession SET corkcnt=corkcnt-1 WHERE id='$corkid';");
+//It is not required to have dead rows in the DB
+mysql_query(" DELETE FROM corkpossession WHERE corkcnt=0;");
+
+mysql_query(" INSERT INTO corkdistribution (date,player1,player2,player3,player4,sponsorid,corkunitprice) VALUES (current_date,'$memberid1','$memberid2','$memberid3','$memberid4','$sponsorid','$unitprice') ");
+
+
+$array = array($memberid1, $memberid2, $memberid3, $memberid4);
+$memberid_array = array_count_values($array);
+foreach ($memberid_array as $memid => $memcnt) {
+    $corkcnt = 0.25 * $memcnt;
+    $price = $unitprice * $corkcnt;
+    mysql_query(" INSERT INTO corkusage (memid,date,corkcnt,sponsorid,price) VALUES ('$memid',current_date,'$corkcnt','$sponsorid','$price') ");
+    mysql_query(" UPDATE memberdetails set amountdue=amountdue+'$price' WHERE id='$memid;'");
+}
+
 ?>
-    	<script>
-                window.location.href= "sponsorhome.php";
-         </script>
+<script>
+    window.location.href = "sponsorhome.php";
+</script>
          

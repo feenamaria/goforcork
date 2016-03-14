@@ -94,7 +94,7 @@
                             while ($row = mysql_fetch_array($sql))
                             {
                             $name = $row['name'];
-                            $no = $row['nboxes'];
+                            $no = "";
                             $amt = $row['amountdue'];
 
                             ?>

@@ -1,4 +1,27 @@
 <!DOCTYPE html>
+<?php
+session_start();
+$userid = $_SESSION['user'];
+echo $userid;
+//TODO: Check whether admin or not
+if (!$userid) {
+    echo "<script>
+		window.location.href='index.php?u=expired';
+		</script>";
+}
+//if ($userid) {
+//define a function to check whether admin or not
+//    def function is_sponsor(
+//    if ("yes" == mysql_query("select admin from memberdetails where id='$userid';")) {
+//        return true;
+//    } else {
+//        return false;
+//    })
+//    if (!is_sponsor($userid)) {
+//        window.location.hrefff = 'index.php?u=nopermission'
+//    }
+//}
+?>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -76,17 +99,25 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                        <?php
+                        include('db.php');
+                        $sql = mysql_query("select * from corkpossession where memberid='$userid';");
+                        $row_cnt = mysql_num_rows($sql);
+                        if ($row_cnt == 0) {
+                            ?>
+                            <div class="alert alert-danger"><a class="close" data-dismiss="alert"
+                                                               aria-label="close">&times;</a> You got no corks left!!
+                            </div>
+                            <?php
+                        }
+                        ?>
                         <div class="form-group">
                             <div class="">
 
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 style6">Cork(Rs)</div>
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                    <select name="corktype" input class="form-control" id="sel-cork-type" required/>
-
+                                    <select name="corkid" input class="form-control" required/>
                                     <?php
-                                    include('db.php');
-                                    //TODO need to get memberid, also validate whether the member is a sponsor or not.
-                                    $sql = mysql_query("select * from corkpossession where memberid='501';");
                                     while ($row = mysql_fetch_array($sql)) {
                                         $unitprice = $row['unitprice'];
                                         $corkid = $row['id'];
@@ -102,15 +133,16 @@
 
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 style6">Player1:</div>
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                    <select name="membername1" input class="form-control" id="membername1" required/>
+                                    <select name="memberid1" input class="form-control" required/>
 
                                     <?php
                                     include('db.php');
                                     $sql = mysql_query("select * from memberdetails");
                                     while ($row = mysql_fetch_array($sql)) {
                                         $name = $row['name'];
+                                        $memberid = $row['id'];
                                         ?>
-                                        <option value="<?php echo $name ?>"><?php echo $name ?></option>
+                                        <option value="<?php echo $memberid ?>"><?php echo $name ?></option>
                                         <?php
                                     }
                                     ?>
@@ -119,15 +151,16 @@
                                 <br/><br/>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 style6">Player2:</div>
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                    <select name="membername2" input class="form-control" id="membername2" required/>
+                                    <select name="memberid2" input class="form-control" required/>
 
                                     <?php
                                     include('db.php');
                                     $sql = mysql_query("select * from memberdetails");
                                     while ($row = mysql_fetch_array($sql)) {
                                         $name = $row['name'];
+                                        $memberid = $row['id'];
                                         ?>
-                                        <option value="<?php echo $name ?>"><?php echo $name ?></option>
+                                        <option value="<?php echo $memberid ?>"><?php echo $name ?></option>
                                         <?php
                                     }
                                     ?>
@@ -136,15 +169,16 @@
                                 <br/><br/>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 style6">Player3:</div>
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                    <select name="membername3" input class="form-control" id="membername3" required/>
+                                    <select name="memberid3" input class="form-control" required/>
 
                                     <?php
                                     include('db.php');
                                     $sql = mysql_query("select * from memberdetails");
                                     while ($row = mysql_fetch_array($sql)) {
                                         $name = $row['name'];
+                                        $memberid = $row['id'];
                                         ?>
-                                        <option value="<?php echo $name ?>"><?php echo $name ?></option>
+                                        <option value="<?php echo $memberid ?>"><?php echo $name ?></option>
                                         <?php
                                     }
                                     ?>
@@ -153,15 +187,16 @@
                                 <br/><br/>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 style6">Player4:</div>
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                    <select name="membername4" input class="form-control" id="membername4" required/>
+                                    <select name="memberid4" input class="form-control" required/>
 
                                     <?php
                                     include('db.php');
                                     $sql = mysql_query("select * from memberdetails");
                                     while ($row = mysql_fetch_array($sql)) {
                                         $name = $row['name'];
+                                        $memberid = $row['id'];
                                         ?>
-                                        <option value="<?php echo $name ?>"><?php echo $name ?></option>
+                                        <option value="<?php echo $memberid ?>"><?php echo $name ?></option>
                                         <?php
                                     }
                                     ?>
@@ -173,24 +208,20 @@
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
                 </div>
+                <!--                TODO: Align correctly-->
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <center>
-                            <button class="btn logi-btn" id="logi-btn" type="submit" value="Submit" name="btn-reg"
-                                    formaction="insertplayers.php">Save & Continue
-                            </button>
-                        </center>
+                        <button class="btn logi-btn" id="logi-btn" type="submit" value="Submit" name="btn-reg"
+                                formaction="insertplayers.php"
+                            <?php if ($row_cnt == 0) {
+                                echo "disabled";
+                            } ?>
+                        >
+                            Save & Continue
+                        </button>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <center>
-                            <button class="btn logi-btnp" id="logi-btn" type="submit" value="Submit" name="btn-reg">
-                                Done
-                            </button>
-                        </center>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                </div>
             </form>
         </div>
     </div>
