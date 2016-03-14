@@ -78,6 +78,28 @@
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                         <div class="form-group">
                             <div class="">
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 style6">Cork(Rs)</div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                    <select name="corktype" input class="form-control" id="sel-cork-type" required/>
+
+                                    <?php
+                                    include('db.php');
+                                    //TODO need to get memberid, also validate whether the member is a sponsor or not.
+                                    $sql = mysql_query("select * from corkpossession where memberid='501';");
+                                    while ($row = mysql_fetch_array($sql)) {
+                                        $unitprice = $row['unitprice'];
+                                        $corkid = $row['id'];
+                                        ?>
+                                        <option value="<?php echo $corkid ?>"><?php echo $unitprice ?></option>
+                                        <?php
+                                    }
+                                    ?>
+                                    </select>
+                                </div>
+                                <br/><br/>
+
+
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 style6">Player1:</div>
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                                     <select name="membername1" input class="form-control" id="membername1" required/>
