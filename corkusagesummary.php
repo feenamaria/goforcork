@@ -67,7 +67,7 @@ $previous_date = date('Y-m-01', strtotime('-1 month', strtotime($current_date)))
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
             <h3 style=" text-align:center;color:#FFFFFF">
                 <center>
-                    <b>PAYMENT SUMMARY</b>
+                    <b>CORK USAGE SUMMARY</b>
                 </center>
             </h3>
         </div>
@@ -81,12 +81,13 @@ $previous_date = date('Y-m-01', strtotime('-1 month', strtotime($current_date)))
                     <img src="images/icons/ic_launcher.png" style="height:150px;width:250px;">
                 </center>
             </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
             <a href="corkusagesummary.php?current=<?php echo $previous_date; ?>">
                 <button class="btn">
                     Previous
                 </button>
             </a>
-            <?php echo $current_month; ?>/<?php echo $current_year; ?>
+            Current month : <?php echo $current_month; ?>/<?php echo $current_year; ?>
             <a href="corkusagesummary.php?current=<?php echo $next_date; ?>">
                 <button class="btn" <?php if ($current_date >= date('Y-m-01')) {
                     echo "disabled";
@@ -140,33 +141,6 @@ $previous_date = date('Y-m-01', strtotime('-1 month', strtotime($current_date)))
             </div>
             <br/>
             <br/>
-            <form method="post" action="adminhome.php">
-                <div class="row">
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <center>
-                            <button class="btn logi-btn" id="logi-btn" type="submit" value="Submit" name="btn-reg">
-                                Previous
-                            </button>
-                        </center>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <center>
-                            <button class="btn logi-btnp" id="logi-btn" type="submit" value="Submit" name="btn-reg">
-                                Done
-                            </button>
-                        </center>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <center>
-                            <button class="btn logi-btn" id="logi-btn" type="submit" value="Submit" name="btn-reg">
-                                Next
-                            </button>
-                        </center>
-                    </div>
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                </div>
-            </form>
         </div>
     </div>
     <br/><br/><br/>
