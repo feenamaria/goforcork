@@ -1,11 +1,16 @@
 <?php
-if ($_POST["membername"]) {
+if ($_POST["memberid"]) {
     session_start();
     include('db.php');
-    $membername = $_POST['membername'];
+    $memberid = $_POST['memberid'];
     $mobnum = $_POST['mobilenumber'];
-    $sponsor = $_POST['sponsor'];
-    if (mysql_query("UPDATE memberdetails SET mobilenum='$mobnum',sponsor='$sponsor' WHERE name='$membername' ")) ;
+    $sponsor = isset($_POST['sponsor']) ? $_POST['sponsor'] : "no";
+    if ($sponsor == "yes") {
+        $password = "password"; //TODO store the default password in single place.
+    } else {
+        $password = "";
+    }
+    $sql = mysql_query("UPDATE memberdetails SET mobilenum='$mobnum',sponsor='$sponsor',password='$password' WHERE id='$memberid';");
 };
 ?>
 <script>

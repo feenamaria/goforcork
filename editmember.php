@@ -1,4 +1,4 @@
-<!--TODO : After adding a new member, successfull/failure message to be displayed.-->
+<!--TODO : 1. After adding a new member, successfull/failure message to be displayed.-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,7 +63,7 @@
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                         <div class="form-group">
                             <div class="">
-                                <select name="membername" input class="form-control" id="membername" required/>
+                                <select name="memberid" input class="form-control" id="sel-member-name" required/>
                                 <?php
                                 include('db.php');
                                 $sql = mysql_query("select * from memberdetails");
@@ -71,10 +71,11 @@
                                     $name = $row['name'];
                                     $no = $row['mobilenum'];
                                     $sponsor = $row['sponsor'];
+                                    $memberid = $row['id'];
 
                                     ?>
                                     <option data-phno="<?php echo $no ?>" data-issponsor="<?php echo $sponsor ?>"
-                                            value="<?php echo $name ?>"><?php echo $name ?></option>
+                                            value="<?php echo $memberid ?>"><?php echo $name ?></option>
                                     <?php
                                 }
                                 ?>
@@ -120,14 +121,13 @@
                         </center>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <center>
-                            <button class="btn logi-btnp" id="edit-member-bck-btn" name="btn-reg">Back
-                            </button>
-                        </center>
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
                 </div>
             </form>
+            <a href="adminhome.php">
+                <button class="btn logi-btnp">Back</button>
+            </a>
         </div>
     </div>
 

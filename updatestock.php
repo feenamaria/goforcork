@@ -12,7 +12,6 @@ $unitprice = $_POST['unitprice'];
 $sql = mysql_query("SELECT * FROM corkpossession where memberid='$memberid' and unitprice='$unitprice';");
 $row = mysql_fetch_array($sql);
 if ($row) {
-    echo "hardddi";
     $curerntcorkcnt = $row['corkcnt'];
     $id = $row['id'];
     $newcorkcnt = $curerntcorkcnt + $corkcnt;

@@ -1,5 +1,5 @@
 $(function () {
-    $('#membername').change(function () {
+    $('#sel-member-name').change(function () {
         $('#phone-num').val($(this).find('option:selected').data('phno'));
         if ($(this).find('option:selected').data('issponsor') === 'yes') {
             $('#sponsor-chkbx').prop('checked', true);
@@ -7,8 +7,4 @@ $(function () {
             $('#sponsor-chkbx').prop('checked', false);
         }
     }).change();
-});
-
-$('#edit-member-bck-btn').on('click', function () {
-    window.location.href = "adminhome.php";
 });

@@ -62,17 +62,17 @@
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                         <div class="form-group">
                             <div class="">
-                                <select name="membername" input class="form-control" id="membername" required/>
+                                <select name="memberid" input class="form-control" id="sel-member-name" required/>
                                 <?php
                                 include('db.php');
                                 $sql = mysql_query("select * from memberdetails");
                                 while ($row = mysql_fetch_array($sql)) {
                                     $name = $row['name'];
                                     $amt = $row['amountdue'];
-
+                                    $memberid = $row['id'];
                                     ?>
                                     <option data-phno="<?php echo $amt ?>"
-                                            value="<?php echo $name ?>"><?php echo $name ?></option>
+                                            value="<?php echo $memberid ?>"><?php echo $name ?></option>
                                     <?php
                                 }
                                 ?>
