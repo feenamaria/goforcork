@@ -116,10 +116,23 @@ if (!$userid) {
             <br/>
             <div class="row">
                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><a href="paymentsummary.php">
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><a href="paymentsummary.php?month=3&year=2016">
                         <center>
                             <button class="btn logi-btn" id="logi-btn" type="submit" value="Submit" name="btn-reg">
                                 Payment Summary
+                            </button>
+                        </center>
+                    </a></div>
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"></div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><a
+                        href="corkusagesummary.php?current=<?php echo date('Y-m-01') ?>">
+                        <center>
+                            <button class="btn logi-btn" id="logi-btn" type="submit" value="Submit" name="btn-reg">
+                                Cork Usage Summary
                             </button>
                         </center>
                     </a></div>
