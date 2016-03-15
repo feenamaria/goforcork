@@ -149,24 +149,9 @@ if (!$userid) {
                         </center>
                     </a></div>
                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"></div>
-            </div>
-            <br/>
-            <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><a href="addboxes.php">
-                        <center>
-                            <button class="btn logi-btn" id="logi-btn" type="submit" value="Submit" name="btn-reg">Add
-                                Boxes
-                            </button>
-                        </center>
-                    </a></div>
-                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"></div>
-            </div>
-             
-             
+            </div>             
         </div>
     </div>
-    <br/><br/>
     <div class="container navbar-fixed-bottom">
         <div class="header3 col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <center>

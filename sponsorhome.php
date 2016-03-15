@@ -2,7 +2,7 @@
 <?php
 session_start();
 $userid = $_SESSION['user'];
-echo $userid;
+//echo $userid;
 //TODO: Check whether admin or not
 if (!$userid) {
     echo "<script>
@@ -60,6 +60,10 @@ if (!$userid) {
             color: #666666
         }
 
+        .stylel {
+            padding-top: 7px;
+        }
+
         -->
     </style>
 </head>
@@ -114,7 +118,9 @@ if (!$userid) {
                         <div class="form-group">
                             <div class="">
 
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 style6">Cork(Rs)</div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 style6">
+                                    <div class="stylel">Cork (<i class="fa fa-inr"></i>)</div>
+                                </div>
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                                     <select name="corkid" input class="form-control" required/>
                                     <?php
@@ -131,7 +137,9 @@ if (!$userid) {
                                 <br/><br/>
 
 
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 style6">Player1:</div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 style6">
+                                    <div class="stylel">Player1:</div>
+                                </div>
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                                     <select name="memberid1" input class="form-control" required/>
 
@@ -149,7 +157,9 @@ if (!$userid) {
                                     </select>
                                 </div>
                                 <br/><br/>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 style6">Player2:</div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 style6">
+                                    <div class="stylel">Player2:</div>
+                                </div>
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                                     <select name="memberid2" input class="form-control" required/>
 
@@ -167,7 +177,9 @@ if (!$userid) {
                                     </select>
                                 </div>
                                 <br/><br/>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 style6">Player3:</div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 style6">
+                                    <div class="stylel">Player3:</div>
+                                </div>
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                                     <select name="memberid3" input class="form-control" required/>
 
@@ -185,7 +197,9 @@ if (!$userid) {
                                     </select>
                                 </div>
                                 <br/><br/>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 style6">Player4:</div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 style6">
+                                    <div class="stylel">Player4:</div>
+                                </div>
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                                     <select name="memberid4" input class="form-control" required/>
 
@@ -208,10 +222,30 @@ if (!$userid) {
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
                 </div>
-                <!--                TODO: Align correctly-->
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                        <?php
+                        error_reporting(0);
+                        $x = 1;
+                        if ($x == $_GET['a']) {
+                            ?>
+                            <div class="alert alert-success"><a href="#" class="close" data-dismiss="alert"
+                                                                aria-label="close">&times;</a> Cork Alloted
+                                Successfully!!!
+                            </div>
+                            <?php
+
+                        }
+                        ?>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                </div>
+
+                <!--                TODO: Align correctly-->
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                         <button class="btn logi-btn" id="logi-btn" type="submit" value="Submit" name="btn-reg"
                                 formaction="insertplayers.php"
                             <?php if ($row_cnt == 0) {
@@ -220,11 +254,11 @@ if (!$userid) {
                         >
                             Save & Continue
                         </button>
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
                     </div>
             </form>
         </div>
-    </div>
+    </div><br/><br/>
     <div class="container navbar-fixed-bottom">
         <div class="header3 col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <center>
