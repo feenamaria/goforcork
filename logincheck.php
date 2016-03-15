@@ -11,8 +11,6 @@ if ($_POST["password"]) {
     $admin = $row['admin'];
     $sponsor = $row['sponsor'];
     $mbno = $row['mobilenum'];
-    echo $admin;
-    echo $memberid;
     $_SESSION['user'] = $memberid;
     $find = mysql_num_rows($res);
     if ($row['password'] == $password && ($mobnum == $mbno) && ($admin == 'yes')) {
@@ -28,16 +26,11 @@ if ($_POST["password"]) {
         </script>
         <?php
     } else if ($row['password'] != $password && ($mobnum == $mbno) && ($sponsor == 'yes')) {
-//        echo $password;
-//        echo $row['password'];
         echo "<script>
 		window.location.href='sponsorlogin.php?a=1';
 		</script>";
 
     } else if ($row['password'] != $password && ($mobnum == $mbno) && ($admin == 'yes')) {
-//        echo $memberid;
-//        echo $password;
-//        echo $row['password'];
         echo "<script>
 		window.location.href='adminlogin.php?a=1';
 		</script>";

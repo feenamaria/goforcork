@@ -63,7 +63,7 @@ if (!$userid) {
                             $x = 1;
                             if ($x == $_GET['a']) {
                                 ?>
-                                <div class="alert alert-success"><a href="#" class="close" data-dismiss="alert"
+                                <div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert"
                                                                     aria-label="close">&times;</a>You have entered a
                                     Wrong Password. Please enter Correct Password.
                                 </div>

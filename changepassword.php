@@ -47,7 +47,7 @@
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group">
               <div class="">
-                <input class="form-control" type="text" name="oldpassword" placeholder="enter old password"/>
+                <input class="form-control" type="password" name="oldpassword" placeholder="enter old password"/>
               </div>
             </div>
           </div>
@@ -58,7 +58,7 @@
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group">
               <div class="">
-                <input class="form-control" type="text" name="newpassword" placeholder="enter new password"/>
+                <input class="form-control" type="password" name="newpassword" placeholder="enter new password"/>
               </div>
             </div>
           </div>
@@ -69,7 +69,7 @@
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group">
               <div class="">
-                <input class="form-control" type="text" name="newpassword1" placeholder="confirm password"/>
+                <input class="form-control" type="password" name="newpassword1" placeholder="confirm password"/>
               </div>
             </div>
           </div>

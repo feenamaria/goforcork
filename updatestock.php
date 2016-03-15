@@ -19,7 +19,8 @@ if ($row) {
 } else {
     mysql_query("INSERT INTO corkpossession(memberid, corkcnt, unitprice) VALUES('$memberid', '$corkcnt', '$unitprice');");
 }
-?>
+echo "
 <script>
-    window.location.href = "stockdistribution.php";
-</script>
+    window.location.href = 'stockdistribution.php?a=1';
+</script>"; ?>
+

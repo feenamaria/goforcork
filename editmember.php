@@ -61,6 +61,25 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                        <?php
+                        error_reporting(0);
+                        $x = 1;
+                        if ($x == $_GET['a']) {
+                            ?>
+                            <div class="alert alert-success"><a href="#" class="close" data-dismiss="alert"
+                                                                aria-label="close">&times;</a> Details Updated
+                                Successfuly...
+                            </div>
+                            <?php
+
+                        }
+                        ?>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                         <div class="form-group">
                             <div class="">
                                 <select name="memberid" input class="form-control" id="sel-member-name" required/>
@@ -121,13 +140,16 @@
                         </center>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                        <center>
+                            <button class="btn logi-btnp"  name="btn-reg"
+                                    formaction="adminhome.php">Back
+                            </button>
+                        </center>
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
                 </div>
             </form>
-            <a href="adminhome.php">
-                <button class="btn logi-btnp">Back</button>
-            </a>
+
         </div>
     </div>
 

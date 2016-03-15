@@ -12,8 +12,8 @@ if ($_POST["memberid"]) {
     }
     $sql = mysql_query("UPDATE memberdetails SET mobilenum='$mobnum',sponsor='$sponsor',password='$password' WHERE id='$memberid';");
 };
-?>
+echo "
 <script>
-    window.location.href = "editmember.php";
-</script>
+    window.location.href = 'editmember.php?a=1';
+</script>"; ?>
     	

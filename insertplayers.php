@@ -28,9 +28,7 @@ foreach ($memberid_array as $memid => $memcnt) {
     mysql_query(" INSERT INTO corkusage (memid,date,corkcnt,sponsorid,price) VALUES ('$memid',current_date,'$corkcnt','$sponsorid','$price') ");
     mysql_query(" UPDATE memberdetails set amountdue=amountdue+'$price' WHERE id='$memid;'");
 }
-
-?>
+echo "
 <script>
-    window.location.href = "sponsorhome.php";
-</script>
-         
+    window.location.href = 'sponsorhome.php?a=1';
+</script>"; ?>

@@ -9,8 +9,8 @@ $amountpaid = $_POST['amtpaid'];
 //echo $totalamount;
 if (mysql_query("UPDATE memberdetails SET amountdue=amountdue-'$amountpaid' WHERE id='$memberid'")) ;
 
-?>
+echo "
 <script>
-    window.location.href = "amountpayment.php";
-</script>
+    window.location.href = 'amountpayment.php?a=1';
+</script>"; ?>
           
