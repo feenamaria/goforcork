@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 session_start();
 $userid = $_SESSION['user'];
 //TODO: Check whether admin or not
@@ -18,7 +19,7 @@ if (!$userid) {
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="images/favicon.ico">
-    <title>GOFORCORK</title>
+    <title>MRCHARMONY</title>
     <!-- Core CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="fonts/css/font-awesome.css" type="text/css">
@@ -26,7 +27,7 @@ if (!$userid) {
     <style type="text/css">
         <!--
         .style1 {
-            font-size: 12px
+            font-size: 12px;
         }
 
         -->
@@ -36,17 +37,17 @@ if (!$userid) {
 <body>
 <div class="container">
     <div class="header col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <h3 style=" text-align:center;color:#FFFFFF">
                 <center>
                     <b>SPONSOR LOGIN</b>
                 </center>
             </h3>
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
     </div>
-    <div class="log-in">
+    <div class="log-in" style="margin-bottom:60px;">
         <div class="log-content">
             <div class="log-logo">
                 <center>
@@ -64,19 +65,17 @@ if (!$userid) {
                             if ($x == $_GET['a']) {
                                 ?>
                                 <div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert"
-                                                                    aria-label="close">&times;</a>You have entered a
+                                                                   aria-label="close">&times;</a>You have entered a
                                     Wrong Password. Please enter Correct Password.
                                 </div>
                                 <?php
 
                             }
-
-
                             ?>
                             <span id="mob"></span>
                             <div class="">
-                                <input class="form-control login-mob" type="password" name="password" value=""
-                                       autocomplete="off" placeholder="enter sponsor password" required/>
+                                <input class="form-control login-mob" type="password" name="password" autocomplete="off"
+                                       placeholder="enter sponsor password" autofocus required/>
                             </div>
                         </div>
                     </div>
@@ -89,6 +88,26 @@ if (!$userid) {
                     </div>
                 </div>
             </form>
+            <br/>
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                    <?php
+                    error_reporting(0);
+                    $x = 2;
+                    if ($x == $_GET['b']) {
+                        ?>
+                        <div class="alert alert-success"><a href="#" class="close" data-dismiss="alert"
+                                                            aria-label="close">&times;</a>Enter the Password that has been send to your registered mobile
+                            number!!!
+                        </div>
+                        <?php
+
+                    }
+                    ?>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+            </div>
               <a href="sendpassword.php">
                 <center>
                     Forgot password?

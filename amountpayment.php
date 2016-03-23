@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="images/favicon.ico">
-    <title>GOFORCORK</title>
+    <title>MRCHARMONY</title>
     <!-- Core CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="fonts/css/font-awesome.css" type="text/css">
@@ -81,7 +81,7 @@
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                         <div class="form-group">
                             <div class="">
-                                <select name="memberid" input class="form-control" id="sel-member-name" required/>
+                                <select name="memberid" input class="form-control" id="sel-member-name" autofocus required/>
                                 <?php
                                 include('db.php');
                                 $sql = mysql_query("select * from memberdetails");
@@ -117,7 +117,7 @@
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                         <div class="form-group">
                             <div class="">
-                                <input class="form-control" type="text" name="amtpaid" placeholder="enter amt. paid"/>
+                                <input class="form-control" type="text" name="amtpaid" placeholder="enter amt. paid" required/>
                             </div>
                         </div>
                     </div>
@@ -134,8 +134,9 @@
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                         <center>
-                            <button class="btn logi-btnp" id="logi-btn" name="btn-reg"
-                                    formaction="adminhome.php">Back
+                            <a href="adminhome.php">
+                                <button class="btn logi-btnp" name="btn-reg">Back
+                            </a>
                             </button>
                         </center>
                     </div>

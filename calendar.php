@@ -143,9 +143,9 @@ class Calendar
 
         return
             '<div class="header">' .
-            '<a class="prev" href="' . $this->naviHref . '?month=' . sprintf('%02d', $preMonth) . '&year=' . $preYear . '"><<</a>' .
-            '<span class="title">' . date('M Y', strtotime($this->currentYear . '-' . $this->currentMonth . '-1')) . '</span>' .
-            '<a class="next" href="' . $this->naviHref . '?month=' . sprintf("%02d", $nextMonth) . '&year=' . $nextYear . '">>></a>' .
+            '<a class="prev" href="' . $this->naviHref . '?month=' . sprintf('%02d', $preMonth) . '&year=' . $preYear . '"><i class="fa fa-chevron-left fa-3x" style="color:white"></i></a>' .
+            '<span class="h1" style="color:white;">' . date('M Y', strtotime($this->currentYear . '-' . $this->currentMonth . '-1')) . '</span>' .
+            '<a class="next" href="' . $this->naviHref . '?month=' . sprintf("%02d", $nextMonth) . '&year=' . $nextYear . '" ><i class="fa fa-chevron-right fa-3x" style="color:white"></i></a>' .
             '</div>
             ';
     }

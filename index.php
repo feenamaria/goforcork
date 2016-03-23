@@ -7,8 +7,9 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="images/favicon.ico">
-    <title>GOFORCORK</title>
+    <!--<link rel="icon" href="images/favicon.ico">
+we have to generate a favicon from google and has to paste it in images folder. paste this above link in all pages-->
+    <title>MRCHARMONY</title>
     <!-- Core CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="fonts/css/font-awesome.css" type="text/css">
@@ -26,18 +27,16 @@
 <body>
 <div class="container">
     <div class="header col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <h3 style=" text-align:center;color:#FFFFFF">
                 <center>
                     <b>MRC HARMONY</b>
                 </center>
             </h3>
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
     </div>
     <div class="log-in">
-        <div class="log-content">
+        <div class="log-content" style="margin-bottom:60px;">
             <div class="log-logo">
                 <center>
                     <img src="images/icons/ic_launcher.png">
@@ -71,9 +70,10 @@
                             <div class="">
                                 <input class="form-control login-mob" type="text" required name="mobilenumber"
                                        maxlength="10" id="mobilenumber"
-                                       onkeypress='return event.keyCode == 8 || event.charCode >=48 && event.charCode<=57 '
+                                       onkeypress='return event.keyCode == 8 || event.keyCode == 13 || event.charCode >=48 && event.charCode<=57 '
                                        placeholder="Mobile Number" pattern="^(7|8|9)\d{9}"
-                                       title="Enter a valid 10 digit mobilenumber starting with 9/8/7"/>
+                                       title="Enter a valid 10 digit mobilenumber starting with 9/8/7"
+                                       autocomplete="off" autofocus/>
                             </div>
                         </div>
                     </div>
@@ -100,11 +100,10 @@
 <!-- Core JavaScript
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/custom.js"></script>
 <script src="js/jquery.js"></script>
-<script type="text/javascript">
-</script>
 </body>
 </html>

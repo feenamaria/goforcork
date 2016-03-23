@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="images/favicon.ico">
-    <title>GOFORCORK</title>
+    <title>MRCHARMONY</title>
     <!-- Core CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="fonts/css/font-awesome.css" type="text/css">
@@ -81,28 +81,21 @@
                                 <div align="left">Name</div>
                             </th>
                             <th>
-                                <div align="center">No: of Corks</div>
-                            </th>
-                            <th>
-                                <div align="center">Amt. (<i class="fa fa-inr"></i>)</div>
+                                <div align="center">Amt.Due (<i class="fa fa-inr"></i>)</div>
                             </th>
                         </tr>
                         <tr>
                             <?php
                             include('db.php');
-                            $sql = mysql_query("select * from memberdetails");
+                            $sql = mysql_query("select * from memberdetails ORDER  BY name");
                             while ($row = mysql_fetch_array($sql))
                             {
                             $name = $row['name'];
                             $no = "";
                             $amt = $row['amountdue'];
-
                             ?>
                             <td>
                                 <div align="left"><?php echo $name ?></div>
-                            </td>
-                            <td>
-                                <div align="center"><?php echo $no ?></div>
                             </td>
                             <td>
                                 <div align="center"><?php echo $amt ?></div>
@@ -119,29 +112,19 @@
             <br/>
             <form method="post" action="adminhome.php">
                 <div class="row">
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <center>
-                            <button class="btn logi-btn" id="logi-btn" type="submit" value="Submit" name="btn-reg">
-                                Previous
-                            </button>
-                        </center>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <center>
                             <button class="btn logi-btnp" id="logi-btn" type="submit" value="Submit" name="btn-reg">
-                                Done
+                                Back
                             </button>
                         </center>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <center>
-                            <button class="btn logi-btn" id="logi-btn" type="submit" value="Submit" name="btn-reg">
-                                Next
-                            </button>
-                        </center>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+
                     </div>
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
                 </div>
             </form>
         </div>

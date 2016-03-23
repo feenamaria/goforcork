@@ -1,5 +1,6 @@
 <!--TODO remove all the if's in mysql_query...assign it to sql-->
 <?php
+error_reporting(0);
 session_start();
 include('db.php');
 $memberid = $_POST['memberid'];
@@ -7,7 +8,7 @@ $memberid = $_POST['memberid'];
 $amountpaid = $_POST['amtpaid'];
 //$totalamount = $amountdue - $amountpaid;
 //echo $totalamount;
-if (mysql_query("UPDATE memberdetails SET amountdue=amountdue-'$amountpaid' WHERE id='$memberid'")) ;
+mysql_query("UPDATE memberdetails SET amountdue=amountdue-'$amountpaid' WHERE id='$memberid'") ;
 
 echo "
 <script>

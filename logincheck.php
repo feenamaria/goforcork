@@ -1,6 +1,7 @@
 <?php
 if ($_POST["password"]) {
-    session_start();
+    error_reporting(0);
+    session_start();    
     include('db.php');
     $mobnum = $_SESSION['mobilenumber'];
     $password = $_POST['password'];

@@ -1,4 +1,4 @@
-<!--TODO: 1.Allignments 2.Validate unit price(>0, int)-->
+    <!--TODO: 1.Allignments 2.Validate unit price(>0, int)-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="images/favicon.ico">
-    <title>GOFORCORK</title>
+    <title>MRCHARMONY</title>
     <!-- Core CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="fonts/css/font-awesome.css" type="text/css">
@@ -30,6 +30,7 @@
         }
 
         .style4 {
+            padding-top: 8px;
             color: #666666
         }
 
@@ -57,7 +58,7 @@
                     <img src="images/icons/ic_launcher.png" style="height:150px;width:250px;">
                 </center>
             </div>
-            <form method="post">
+
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
@@ -68,7 +69,7 @@
                             ?>
                             <div class="alert alert-success"><a href="#" class="close" data-dismiss="alert"
                                                                 aria-label="close">&times;</a> Stock Distributed
-                                Successfuly...
+                                Successfully...
                             </div>
                             <?php
 
@@ -76,14 +77,14 @@
                         ?>
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                </div>
+                </div> <form method="post">
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                         <div class="form-group">
                             <div class="">
 
-                                <select name="memberid" input class="form-control" required/>
+                                <select name="memberid" input class="form-control" autofocus required/>
                                 <?php
                                 include('db.php');
                                 $sql = mysql_query("select * from memberdetails where sponsor='yes'");
@@ -104,13 +105,14 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                         <div align="left"><span class="style4">&nbsp;&nbsp;Number of boxes : &nbsp;&nbsp;</span></div>
                     </div>
+
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <div class="form-group">
                             <div class="">
-                                <select input class="form-control" name="boxcnt" required>
+                                <select input class="form-control" name="boxcnt" required/>
                                     <?php
                                     for ($x = 1; $x <= 10; $x++) {
                                         ?>
@@ -122,42 +124,39 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+
                 </div>
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <div align="left"><span class="style4">&nbsp;&nbsp;Cork unit price(<i class="fa fa-inr"></i>): &nbsp;&nbsp;</span>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div align="left"><span class="style4">&nbsp;&nbsp;Box Price(per box)(<i class="fa fa-inr"></i>): &nbsp;&nbsp;</span>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                         <div class="form-group">
-                            <input type="text" id="cork-unit-price" name="unitprice" class="form-control" value="10">
+                            <input type="text" id="cork-unit-price" name="unitprice" class="form-control" value="1200" autocomplete="off" required/>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
                 </div>
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <center>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <button formaction="updatestock.php" class="btn logi-btn" id="stock-dist-save-btn"
                                     type="submit" value="Submit" name="btn-reg">Save
                                 & Continue
                             </button>
-                        </center>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <center>
-                            <button formaction="adminhome.php" class="btn logi-btnp"
-                                    name="btn-reg">
-                                Back
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+
+                            <button class="btn logi-btnp" name="btn-reg"><a href="adminhome.php">Back
+                            </a>
                             </button>
-                        </center>
-                    </div>
+                    </div></a>
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
                 </div>
-            </form>
+
         </div>
     </div>
     <div class="container navbar-fixed-bottom">

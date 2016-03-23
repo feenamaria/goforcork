@@ -8,3 +8,10 @@ $(function () {
         }
     }).change();
 });
+
+
+$(function () {
+    $('.highlighteddate').on('click',function(){
+        alert("(count, price) : "+$(this)[0].title);
+    });
+});

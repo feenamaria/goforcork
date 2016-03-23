@@ -1,5 +1,6 @@
 <!--TODO: in DB which ever field got int/float values(which are used to calculation) should be default 0, Also validate inputs, number only accpeted. dont accept stings-->
 <?php
+error_reporting(0);
 session_start();
 include('db.php');
 $memberid1 = $_POST['memberid1'];

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+error_reporting(0);
 session_start();
 if (!isset($_SESSION['user'])) {
     echo "<script>
@@ -17,7 +18,7 @@ $userid = $_SESSION['user'];
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="images/favicon.ico">
-    <title>GOFORCORK</title>
+    <title>MRCHARMONY</title>
     <!-- Core CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="fonts/css/font-awesome.css" type="text/css">
@@ -132,29 +133,27 @@ $userid = $_SESSION['user'];
         -->
 
         div#calendar {
-            margin: 0px auto;
             padding: 0px;
-            width: 402px;
+            width: 100%;
             font-family: Helvetica, "Times New Roman", Times, serif;
         }
 
         div#calendar div.box {
             position: relative;
             top: 0px;
-            left: 11px;
-            width: 50%;
+            width: 100%;
             height: 20px;
 
         }
 
         div#calendar div.header {
-            line-height: 40px;
+            line-height: 20px;
             vertical-align: middle;
             position: absolute;
             left: 20px;
             right: 60px;
             top: 0px;
-            width: 355px;
+            width: 100%;
             height: 10px;
             text-align: center;
             background-color: #00CC33;
@@ -183,16 +182,25 @@ $userid = $_SESSION['user'];
             right: 0px;
         }
 
+        .month-due{
+            position: absolute;
+            top: 0px;
+            margin-top: 60px;
+        }
+
+        #calendar{
+            margin-top: 50px;
+        }
+
         /*******************************Calendar Content Cells*********************************/
         div#calendar div.box-content {
-            border: px solid #black;
-            border-top: 5px;
-            padding-bottom: 50px;
-            padding-top: 5px;
-            margin-top: 5px;
-            margin-bottom: 50px;
-            margin-left: 20px;
-            height: 100px;
+                border-top: 5px;
+                padding-bottom: 50px;
+                padding-top: 5px;
+                margin-top: 5px;
+                margin-bottom: 50px;
+                margin: 5px;
+                height: 100px;
 
         }
 
@@ -200,9 +208,8 @@ $userid = $_SESSION['user'];
             float: left;
             margin: 0px;
             padding: 0px;
-            margin-top: 20px;
-            margin-left: 10px;
-            height: 50px;
+            margin-top: 27px;
+            width: 100%;
 
         }
 
@@ -212,7 +219,7 @@ $userid = $_SESSION['user'];
             margin-right: 1px;
             float: right;
             list-style-type: none;
-            width: 50px;
+            width: 13.9%;
             height: 30px;
             line-height: 20px;
             vertical-align: middle;
@@ -226,10 +233,10 @@ $userid = $_SESSION['user'];
             float: left;
             margin: 0px;
             padding: 0px;
-            margin-left: 10px;
             margin-bottom: 50px;
             padding-top: 10px;
             padding-bottom: 5px;
+            width: 100%;
         }
 
         /** overall width = width+padding-right**/
@@ -242,8 +249,8 @@ $userid = $_SESSION['user'];
             vertical-align: middle;
             float: left;
             list-style-type: none;
-            width: 50px;
-            height: 20px;
+            width: 13.9%;
+            height: 30px;
             font-size: 15px;
             background-color: #DDD;
             color: #000;
@@ -256,6 +263,11 @@ $userid = $_SESSION['user'];
 
         div.clear {
             clear: both;
+        }
+
+        .box{
+            width: 100%;
+            left: -21px;
         }
     </style>
     <style>
@@ -308,11 +320,6 @@ $userid = $_SESSION['user'];
     </div>
     <div class="log-in">
         <div class="log-content">
-            <div class="log-logo">
-                <center>
-                    <img src="images/icons/ic_launcher.png" style="height:110px;width:150px;">
-                </center>
-            </div>
             <?php
             include 'calendar.php';
             include 'db.php';
@@ -346,28 +353,80 @@ $userid = $_SESSION['user'];
                     var crkdate = $(this).val();
                     document.getElementById('li-' + crkdate).style.background = "green";
                     document.getElementById('li-' + crkdate).title = "(" + crkcnt + "," + price + ")";
+                    var d = document.getElementById('li-' + crkdate);
+                    d.className += " highlighteddate";
                 });
-            </script>
 
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"></div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><span
-                        class="style6">Total No: of Corks&nbsp;:&nbsp;<?php echo $total_cnt ?></span><br/>
-                    <span class="style6">Total Amount:&nbsp;:&nbsp;&nbsp;<i
+            </script>
+            <center>
+            <div class="month-due">
+                <div class=""><span
+                        class="style6">No. of Corks used for this month&nbsp;:&nbsp;<?php echo $total_cnt ?></span><br/>
+                    <span class="style6">Amount for this month&nbsp;:&nbsp;&nbsp;<i
                             class="fa fa-inr"></i>&nbsp;<?php echo $total_price ?>/-</span>
                 </div>
             </div>
+            </center>
         </div>
+        <div class="row">
+        <?php
+           $sql_sum = "SELECT  * FROM memberdetails WHERE id='$userid'";
+           $res_sql_sum = mysql_query($sql_sum);
+           $total_price = 0;
+            while ($row = mysql_fetch_array($res_sql_sum)) {
+                $price = $row['amountdue'];
+                //$total_price += $price;
+                //$corkuseddate = $row['corkuseddate'];
+               
+            } 
+             ?>
+                <span class="style6">Total Amt. to be paid:&nbsp; <i
+                            class="fa fa-inr"></i>&nbsp;<?php echo $price; ?>/-</span>
+                <?php
+        ?>
+    </div>
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><br/>
                 <br/>
-                <a href="index.php">
-                    <button class="btn logi-btnn" id="logi-btnn" type="submit" name="btn-login">DONE</button>
-                </a></div>
+
+                <?php
+                include('db.php');
+                $userid = $_SESSION['user'];
+                $sql = mysql_query("SELECT * FROM memberdetails WHERE id='$userid'");
+                $row = mysql_fetch_array($sql);
+                $admin = $row['admin'];
+                $sponsor = $row['sponsor'];
+                //    TODO Dont user mobilenumber in the session, instead id itself can be used everywhere.
+                if ($admin == 'yes'&& $sponsor =='no') {
+                    ?>
+                    <a href="adminhome.php">
+                        <button class="btn logi-btnn" id="logi-btnn" type="submit" name="btn-login">DONE</button>
+                    </a>
+                    <?php
+                }
+                else if ($sponsor == 'yes' && $admin == 'no') {
+                    ?>
+                    <a href="sponsorhome.php">
+                        <button class="btn logi-btnn" id="logi-btnn" type="submit" name="btn-login">DONE</button>
+                    </a>
+                    <?php
+                }
+                else { ?>
+                    <a href="index.php">
+                        <button class="btn logi-btnn" id="logi-btnn" type="submit" name="btn-login">DONE</button>
+                    </a>
+
+
+                    <?php
+                }
+
+                ?></div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
         </div>
     </div>
+
+    
     <br/>
     <br/>
     <br/>

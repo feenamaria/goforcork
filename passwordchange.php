@@ -1,6 +1,7 @@
 <?php
     if( $_POST["oldpassword"]) {
-        session_start();
+    	error_reporting(0);
+        session_start();		
         include('db.php');
 		$mobnum = $_SESSION['mobilenumber']; 
 		$oldpassword = $_POST['oldpassword'];    
@@ -14,15 +15,25 @@
 		$password = $row['password'];
 		$membername = $row['name'];
         $find = mysql_num_rows($res);
-        if($newpassword == $newpassword1)
-		{		
-			if(mysql_query("UPDATE memberdetails SET password='$newpassword' WHERE name='$membername' "));    
-		}
- 		else 
-		{
-          echo "<script>
+		if($oldpassword == $password) {
+			if ($newpassword == $newpassword1) {
+				if (mysql_query("UPDATE memberdetails SET password='$newpassword' WHERE name='$membername' ")) ;
+			} else {
+				echo "<script>
 					window.location.href='changepassword.php?a=1';
 				</script>";
+			}
+
+		}
+		else{
+			echo"<script>
+		 if('<?php echo $sponsor?>' =='yes'){
+			 window.location.href= 'sponsorchangepassword.php?c=3';
+		 } else {
+			 window.location.href= 'changepassword.php?c=3';
+		 }
+         </script>";
+
 		}
   };
 ?>

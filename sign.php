@@ -9,6 +9,7 @@ if ($_POST["mobilenumber"]) {
     }
     session_regenerate_id(FALSE);
     session_unset();
+    error_reporting(0);
     session_start();
     include('db.php');
     $MbNum = $_POST['mobilenumber'];

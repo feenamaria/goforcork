@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="images/favicon.ico">
-    <title>GOFORCORK</title>
+    <title>MRCHARMONY</title>
     <!-- Core CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="fonts/css/font-awesome.css" type="text/css">
@@ -82,7 +82,7 @@
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                         <div class="form-group">
                             <div class="">
-                                <select name="memberid" input class="form-control" id="sel-member-name" required/>
+                                <select name="memberid" input class="form-control" id="sel-member-name" autofocus required/>
                                 <?php
                                 include('db.php');
                                 $sql = mysql_query("select * from memberdetails");

@@ -1,7 +1,9 @@
 <!--.TODO Remove Add Boxes-->
 <!DOCTYPE html>
 <?php
+error_reporting(0);
 session_start();
+
 $userid = $_SESSION['user'];
 //TODO: Check whether admin or not
 if (!$userid) {
@@ -19,7 +21,7 @@ if (!$userid) {
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="images/favicon.ico">
-    <title>GOFORCORK</title>
+    <title>MRCHARMONY</title>
     <!-- Core CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="fonts/css/font-awesome.css" type="text/css">
@@ -65,7 +67,7 @@ if (!$userid) {
             <div align="center"><a href="myusage.php" class="style2 style3"> My Usage </a></div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-            <div align="center"><a href="changepassword.php" class="style4"> Change Password </a></div>
+            <div align="center"><a href="adminchangepassword.php" class="style4"> Change Password </a></div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
             <div align="center"><a href="index.php" class="style2 style3"> Log Out </a></div>
@@ -139,7 +141,7 @@ if (!$userid) {
                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"></div>
             </div>
             <br/>
-            <div class="row">
+            <div class="row" style="margin-bottom: 60px;">
                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><a href="amountpayment.php">
                         <center>

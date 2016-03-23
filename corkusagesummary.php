@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+error_reporting(0);
 $current_date = isset($_GET["current"]) ? $_GET["current"] : date('Y-m-01');
 $current_month = date('m', strtotime($current_date));
 $current_year = date('Y', strtotime($current_date));
@@ -16,12 +17,27 @@ $previous_date = date('Y-m-01', strtotime('-1 month', strtotime($current_date)))
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="images/favicon.ico">
-    <title>GOFORCORK</title>
+    <title>MRCHARMONY</title>
     <!-- Core CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="fonts/css/font-awesome.css" type="text/css">
     <link rel="stylesheet" href="css/custom.css" type="text/css">
     <style type="text/css">
+
+        .sylepn
+        {
+            padding-top: 8px;
+        }
+        .btnoprevnxt {
+            height: 40px;
+            background-color: #FF6600;
+            border-radius: 20px;
+            border-color: #1B2C3B;
+            color: green;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
         <!--
 
         table {
@@ -31,7 +47,9 @@ $previous_date = date('Y-m-01', strtotime('-1 month', strtotime($current_date)))
 
         th, td {
             text-align: left;
-            padding: 8px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+
         }
 
         th {
@@ -81,30 +99,36 @@ $previous_date = date('Y-m-01', strtotime('-1 month', strtotime($current_date)))
                     <img src="images/icons/ic_launcher.png" style="height:150px;width:250px;">
                 </center>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-            <a href="corkusagesummary.php?current=<?php echo $previous_date; ?>">
-                <button class="btn">
-                    Previous
-                </button>
-            </a>
-            Current month : <?php echo $current_month; ?>/<?php echo $current_year; ?>
-            <a href="corkusagesummary.php?current=<?php echo $next_date; ?>">
-                <button class="btn" <?php if ($current_date >= date('Y-m-01')) {
-                    echo "disabled";
-                }; ?>>
-                    Next
-                </button>
-            </a>
-            <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <a href="corkusagesummary.php?current=<?php echo $previous_date; ?>">
+                        <button class="btnoprevnxt">Previous</button>
+                    </a>
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                    <div class="sylepn">&nbsp; &nbsp;<b><i>Current month : <?php echo $current_month; ?>/<?php echo $current_year; ?></i></b>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                    <a href="corkusagesummary.php?current=<?php echo $next_date; ?>">
+                        <button class="btnoprevnxt" <?php if ($current_date >= date('Y-m-01')) {
+                            echo "disabled";
+                        }; ?>>
+                            Next
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <br/><br/><br/>
+            <div class="row" style="margin-right:5px;margin-left:5px;">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <table>
                         <tr>
                             <th>
                                 <div align="left">Name</div>
                             </th>
                             <th>
-                                <div align="center">No: of Corks</div>
+                                <div align="left">No: of Corks</div>
                             </th>
                             <th>
                                 <div align="center">Amt. (<i class="fa fa-inr"></i>)</div>
@@ -113,7 +137,7 @@ $previous_date = date('Y-m-01', strtotime('-1 month', strtotime($current_date)))
                         <tr>
                             <?php
                             include('db.php');
-                            $sql = mysql_query("SELECT memid,(SELECT name from memberdetails WHERE id=memid) as memname, SUM(corkcnt) as totalcorkcnt, SUM(price) as totalprice FROM corkusage where MONTH(date) = '$current_month' and YEAR(date) = '$current_year' GROUP BY memid");
+                            $sql = mysql_query("SELECT memid,(SELECT name from memberdetails WHERE id=memid)as memname, SUM(corkcnt) as totalcorkcnt, SUM(price) as totalprice FROM corkusage where MONTH(date) = '$current_month' and YEAR(date) = '$current_year' GROUP BY memid ORDER BY memname");
                             while ($row = mysql_fetch_array($sql))
                             {
                             $memid = $row['memid'];
@@ -125,7 +149,7 @@ $previous_date = date('Y-m-01', strtotime('-1 month', strtotime($current_date)))
                             <td>
                                 <div align="left"><?php echo $name ?></div>
                             </td>
-                            <td>
+                           <td>
                                 <div align="center"><?php echo $totalcorkcount ?></div>
                             </td>
                             <td>
@@ -137,13 +161,22 @@ $previous_date = date('Y-m-01', strtotime('-1 month', strtotime($current_date)))
                         ?>
                     </table>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
             </div>
             <br/>
-            <br/>
+
         </div>
     </div>
-    <br/><br/><br/>
+    <div class="row" >
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
+       <a href="adminhome.php"> <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <center>
+                <button class="btn logi-btnp" id="logi-btn" name="btn-reg">Back
+                </button>
+            </center>
+        </div></a>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
+    </div>
+    <br/><br/>
     <div class="container navbar-fixed-bottom">
         <div class="header3 col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <center>

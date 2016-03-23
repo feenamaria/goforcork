@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="images/favicon.ico">
-    <title>GOFORCORK</title>
+    <title>MRCHARMONY</title>
     <!-- Core CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="fonts/css/font-awesome.css" type="text/css">
@@ -28,6 +28,7 @@
         .style3 {
             color: #999999
         }
+
         .style4 {
             color: #666666
         }
@@ -58,7 +59,7 @@
             <div align="right"><a href="editmember.php" class="style2">Edit Member</a></div>
         </div>
     </div>
-    <div class="log-in">
+    <div class="log-in" style="margin-bottom:60px;">
         <div class="log-content">
             <div class="log-logo">
                 <center>
@@ -76,7 +77,25 @@
                             ?>
                             <div class="alert alert-success"><a href="#" class="close" data-dismiss="alert"
                                                                 aria-label="close">&times;</a> Member Added
-                                Successfuly...
+                                Successfully...
+                            </div>
+                            <?php
+
+                        }
+                        ?>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                        <?php
+                        error_reporting(0);
+                        $x = 10;
+                        if ($x == $_GET['xyz']) {
+                            ?>
+                            <div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert"
+                                                                aria-label="close">&times;</a> Mobile number already exists!!!
                             </div>
                             <?php
 
@@ -90,7 +109,8 @@
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                         <div class="form-group">
                             <div class="">
-                                <input class="form-control" type="text" name="membername" placeholder="enter name"/>
+                                <input class="form-control" type="text" name="membername" placeholder="enter name" autocomplete="off" autofocus
+                                       required/>
                             </div>
                         </div>
                     </div>
@@ -101,10 +121,10 @@
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                         <div class="form-group">
                             <div class="">
-                                <input class="form-control" type="text" name="mobilenumber"
+                                <input class="form-control" type="text" action="" name="mobilenumber"
                                        onkeypress='return event.keyCode == 8 || event.charCode >=48 && event.charCode<=57 '
                                        pattern="^(7|8|9)\d{9}" placeholder="enter mobilenumber" maxlength="10"
-                                       title="Enter a valid 10 digit mobilenumber starting with 9/8/7"/>
+                                       title="Enter a valid 10 digit mobilenumber starting with 9/8/7" required/>
                             </div>
                         </div>
                     </div>
@@ -120,29 +140,27 @@
             </span></div>
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
                 </div>
-                  <br/><br/>
+                  <br/>
+                <br/>
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <center>
+                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"> 
+                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
                             <button class="btn logi-btn" id="logi-btn" type="submit" value="Submit" name="btn-reg"
                                     formaction="valuesinsert.php">Add New
                             </button>
-                        </center>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <center>
-                            <button class="btn logi-btnp" id="logi-btn" name="btn-reg"
-                                    formaction="adminhome.php">Back
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                            <a href="adminhome.php">
+                                <button class="btn logi-btnp" id="logi-btn" name="btn-reg"> Back
+                            </a>
                             </button>
-                        </center>
                     </div>
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                </div>
+                    </div>
+                    <div>
             </form>
         </div>
     </div>
-    <br/><br/>
     <div class="container navbar-fixed-bottom">
         <div class="header3 col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <center>

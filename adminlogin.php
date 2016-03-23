@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 session_start();
 $userid = $_SESSION['user'];
 if (!$userid) {
@@ -17,7 +18,7 @@ if (!$userid) {
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="images/favicon.ico">
-    <title>GOFORCORK</title>
+    <title>MRCHARMONY</title>
     <!-- Core CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="fonts/css/font-awesome.css" type="text/css">
@@ -45,7 +46,7 @@ if (!$userid) {
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
     </div>
-    <div class="log-in">
+    <div class="log-in" style="margin-bottom: 60px;">
         <div class="log-content">
             <div class="log-logo">
                 <center>
@@ -63,7 +64,7 @@ if (!$userid) {
                             if ($x == $_GET['a']) {
                                 ?>
                                 <div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert"
-                                                                    aria-label="close">&times;</a>You have entered a
+                                                                   aria-label="close">&times;</a>You have entered a
                                     Wrong Password. Please enter Correct Password.
                                 </div>
                                 <?php
@@ -75,7 +76,7 @@ if (!$userid) {
                             <span id="mob"></span>
                             <div class="">
                                 <input class="form-control login-mob" type="password" name="password" value=""
-                                       autocomplete="off" placeholder="enter admin password" required/>
+                                       autocomplete="off" placeholder="enter admin password" autofocus required/>
                             </div>
                         </div>
                     </div>
@@ -89,6 +90,25 @@ if (!$userid) {
                 </div>
             </form>
             <br/>
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                    <?php
+                    error_reporting(0);
+                    $x = 2;
+                    if ($x == $_GET['b']) {
+                        ?>
+                        <div class="alert alert-success"><a href="#" class="close" data-dismiss="alert"
+                                                            aria-label="close">&times;</a> Enter the Password that has been send to your registered mobile
+                            number!!!
+                        </div>
+                        <?php
+
+                    }
+                    ?>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+            </div>
             <a href="sendpassword.php">
                 <center>
                     Forgot password?
