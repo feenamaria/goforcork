@@ -21,3 +21,15 @@ $(function () {
         $("#daily-cnt")[0].textContent = "";
     });
 });
+
+$(function () {
+    $('#distribute-crk-form .fm-submit').on('click', function () {
+        var existing_member_names = availableTags;
+        var member_names = $('#distribute-crk-form .tags');
+        for (var i = 0; i < member_names.length; i++) {
+            if (existing_member_names.indexOf(member_names[i].value) < 0) {
+                member_names[i].value = "";
+            }
+        }
+    });
+});

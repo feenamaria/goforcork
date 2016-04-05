@@ -72,6 +72,21 @@ if (!$userid) {
             <div align="center"><a href="index.php" class="style2 style3"> Log Out </a></div>
         </div>
     </div>
+
+    <?php
+    include('db.php');
+    $sql = mysql_query("SELECT * FROM memberdetails WHERE id='$userid';");
+    $row = mysql_fetch_array($sql);
+    $sponsor = $row['sponsor'];
+    if ($sponsor == 'yes') {
+        ?>
+        <div>
+            <div align="center"><a href="sponsorhome.php" class="style2 style3"> Sponsor Home </a></div>
+        </div>
+        <?php
+    };
+    ?>
+
     <div class="log-in">
         <div class="log-content">
             <div class="log-logo">

@@ -4,7 +4,7 @@ error_reporting(0);
 session_start();
 $userid = $_SESSION['user'];
 
-if(!isset($_SESSION['cork_distribute_date'])){
+if (!isset($_SESSION['cork_distribute_date'])) {
     $_SESSION['cork_distribute_date'] = date('Y-m-d');
 }
 
@@ -98,14 +98,29 @@ if (!$userid) {
             <div align="center"><a href="index.php" class="style2 style3"> Log Out </a></div>
         </div>
     </div>
+
+    <?php
+    include('db.php');
+    $sql = mysql_query("SELECT * FROM memberdetails WHERE id='$userid';");
+    $row = mysql_fetch_array($sql);
+    $admin = $row['admin'];
+    if ($admin == 'yes') {
+        ?>
+        <div>
+            <div align="center"><a href="adminhome.php" class="style2 style3"> Admin Home </a></div>
+        </div>
+        <?php
+    };
+    ?>
+
+
     <div class="log-in">
         <div class="log-content">
             <div class="log-logo">
                 <center>
-                    <img src="images/icons/ic_launcher.png" style="height:150px;width:250px;">
                 </center>
             </div>
-            <form method="post">
+            <form method="post" id="distribute-crk-form" action="insertplayers.php">
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
@@ -128,7 +143,9 @@ if (!$userid) {
                                     <div class="stylel">Date:</div>
                                 </div>
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                    <input type="text" class="form-control" name="newdate" value="<?php echo $_SESSION['cork_distribute_date']?>" id="datepicker" autocomplete="off" autofocus required/>
+                                    <input type="text" class="form-control" name="newdate"
+                                           value="<?php echo $_SESSION['cork_distribute_date'] ?>" id="datepicker"
+                                           autocomplete="off" autofocus required/>
                                 </div>
                                 <br/><br/>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 style6">
@@ -210,8 +227,7 @@ if (!$userid) {
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <button class="btn logi-btn" id="logi-btn" type="submit" value="Submit" name="btn-reg"
-                                formaction="insertplayers.php"
+                        <button class="btn logi-btn fm-submit" id="logi-btn" type="submit" value="Submit" name="btn-reg"
                             <?php if ($row_cnt == 0) {
                                 echo "disabled";
                             } ?>
@@ -240,9 +256,10 @@ if (!$userid) {
 </script>
 <script src="js/jquery-1.10.2.js"></script>
 <script src="js/jquery-uiauto.js"></script>
+<script src="js/custom.js"></script>
 <script>
     $(function () {
-        var availableTags = [];
+        availableTags = [];
         <?php
 
         $sql = mysql_query("select * from memberdetails");
@@ -256,9 +273,11 @@ if (!$userid) {
             source: availableTags
         });
     });
-    $(function() {
-        $( "#datepicker" ).datepicker({dateFormat: "yy-mm-dd",showOtherMonths: true,
-            selectOtherMonths: true});
+    $(function () {
+        $("#datepicker").datepicker({
+            dateFormat: "yy-mm-dd", showOtherMonths: true,
+            selectOtherMonths: true
+        });
     });
 </script>
 <link rel="stylesheet" href="css/jquery-ui.css">
