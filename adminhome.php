@@ -3,7 +3,6 @@
 <?php
 error_reporting(0);
 session_start();
-
 $userid = $_SESSION['user'];
 //TODO: Check whether admin or not
 if (!$userid) {

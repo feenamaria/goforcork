@@ -47,7 +47,7 @@
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group">
               <div class="">
-                <input class="form-control" type="password" name="oldpassword" placeholder="enter old password" autofocus required/>
+                <input class="form-control" type="password" name="oldpassword" maxlength="10" onkeypress='return event.keyCode == 8 || event.keyCode == 13 || event.keyCode !=32' placeholder="enter old password" autofocus required/>
               </div>
             </div>
           </div>
@@ -58,7 +58,7 @@
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group">
               <div class="">
-                <input class="form-control" type="password" name="newpassword" placeholder="enter new password" required/>
+                <input class="form-control" type="password" name="newpassword" maxlength="10" onkeypress='return event.keyCode == 8 || event.keyCode == 13 || event.keyCode !=32' placeholder="enter new password" required/>
               </div>
             </div>
           </div>
@@ -69,7 +69,7 @@
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group">
               <div class="">
-                <input class="form-control" type="password" name="newpassword1" placeholder="confirm password" required/>
+                <input class="form-control" type="password" name="newpassword1" maxlength="10" onkeypress='return event.keyCode == 8 || event.keyCode == 13 || event.keyCode !=32' placeholder="confirm password" required/>
               </div>
             </div>
           </div>

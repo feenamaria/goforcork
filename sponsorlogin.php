@@ -75,7 +75,7 @@ if (!$userid) {
                             <span id="mob"></span>
                             <div class="">
                                 <input class="form-control login-mob" type="password" name="password" autocomplete="off"
-                                       placeholder="enter sponsor password" autofocus required/>
+                                       maxlength="10" onkeypress='return event.keyCode == 8 || event.keyCode == 13 || event.keyCode !=32' placeholder="enter sponsor password" autofocus required/>
                             </div>
                         </div>
                     </div>

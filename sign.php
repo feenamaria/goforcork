@@ -3,6 +3,9 @@ if ($_POST["mobilenumber"]) {
     if (isset($_SESSION['user'])) {
         unset($_SESSION['user']);
     }
+    if (isset($_SESSION['cork_distribute_date'])) {
+        unset($_SESSION['cork_distribute_date']);
+    }
 //    TODO : No need to use mobile number in session anywhere
     if (isset($_SESSION['mobilenumber'])) {
         unset($_SESSION['mobilenumber']);
@@ -19,6 +22,7 @@ if ($_POST["mobilenumber"]) {
     $admin = $row['admin'];
     $sponsor = $row['sponsor'];
     $_SESSION['user'] = $memberid;
+    $_SESSION['cork_distribute_date'] = date('Y-m-d');
 //    TODO Dont user mobilenumber in the session, instead id itself can be used everywhere.
     $_SESSION['mobilenumber'] = $MbNum;
     if (mysql_num_rows($sql) === 0) {

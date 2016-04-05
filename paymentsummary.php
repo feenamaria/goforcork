@@ -81,7 +81,7 @@
                                 <div align="left">Name</div>
                             </th>
                             <th>
-                                <div align="center">Amt.Due (<i class="fa fa-inr"></i>)</div>
+                                <div align="left">Amt.Due(<i class="fa fa-inr"></i>)</div>
                             </th>
                         </tr>
                         <tr>

@@ -67,8 +67,8 @@
                         if ($x == $_GET['a']) {
                             ?>
                             <div class="alert alert-success"><a href="#" class="close" data-dismiss="alert"
-                                                                aria-label="close">&times;</a> Details Updated
-                                Successfuly...
+                                                                aria-label="close">&times;</a>Updated
+                                Successfully.
                             </div>
                             <?php
 
@@ -85,7 +85,7 @@
                                 <select name="memberid" input class="form-control" id="sel-member-name" autofocus required/>
                                 <?php
                                 include('db.php');
-                                $sql = mysql_query("select * from memberdetails");
+                                $sql = mysql_query("select * from memberdetails ORDER BY NAME ");
                                 while ($row = mysql_fetch_array($sql)) {
                                     $name = $row['name'];
                                     $no = $row['mobilenum'];

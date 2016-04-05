@@ -68,8 +68,7 @@
                         if ($x == $_GET['a']) {
                             ?>
                             <div class="alert alert-success"><a href="#" class="close" data-dismiss="alert"
-                                                                aria-label="close">&times;</a> Stock Distributed
-                                Successfully...
+                                                                aria-label="close">&times;</a>Stock Distributed.
                             </div>
                             <?php
 
@@ -87,7 +86,7 @@
                                 <select name="memberid" input class="form-control" autofocus required/>
                                 <?php
                                 include('db.php');
-                                $sql = mysql_query("select * from memberdetails where sponsor='yes'");
+                                $sql = mysql_query("select * from memberdetails where sponsor='yes' ORDER by NAME ");
                                 while ($row = mysql_fetch_array($sql)) {
                                     $name = $row['name'];
                                     $memberid = $row['id'];
@@ -105,11 +104,11 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
                         <div align="left"><span class="style4">&nbsp;&nbsp;Number of boxes : &nbsp;&nbsp;</span></div>
                     </div>
 
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                         <div class="form-group">
                             <div class="">
                                 <select input class="form-control" name="boxcnt" required/>
@@ -129,11 +128,11 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <div align="left"><span class="style4">&nbsp;&nbsp;Box Price(per box)(<i class="fa fa-inr"></i>): &nbsp;&nbsp;</span>
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                        <div align="left"><span class="style4">&nbsp;&nbsp;Price(per box)&nbsp; <i class="fa fa-inr"></i> &nbsp;: &nbsp;&nbsp;</span>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                         <div class="form-group">
                             <input type="text" id="cork-unit-price" name="unitprice" class="form-control" value="1200" autocomplete="off" required/>
                         </div>
@@ -144,8 +143,7 @@
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <button formaction="updatestock.php" class="btn logi-btn" id="stock-dist-save-btn"
-                                    type="submit" value="Submit" name="btn-reg">Save
-                                & Continue
+                                    type="submit" value="Submit" name="btn-reg">Save&Continue
                             </button>
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">

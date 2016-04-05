@@ -11,7 +11,13 @@ $(function () {
 
 
 $(function () {
-    $('.highlighteddate').on('click',function(){
-        alert("(count, price) : "+$(this)[0].title);
+    $('.highlighteddate').on('click', function () {
+        $("#daily-cnt")[0].textContent = "CorkCnt., Amt. :" + $(this)[0].title;
+    });
+});
+
+$(function () {
+    $('.normaldate').on('click', function () {
+        $("#daily-cnt")[0].textContent = "";
     });
 });

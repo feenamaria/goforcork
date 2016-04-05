@@ -84,7 +84,7 @@
                                 <select name="memberid" input class="form-control" id="sel-member-name" autofocus required/>
                                 <?php
                                 include('db.php');
-                                $sql = mysql_query("select * from memberdetails");
+                                $sql = mysql_query("select * from memberdetails ORDER BY NAME ");
                                 while ($row = mysql_fetch_array($sql)) {
                                     $name = $row['name'];
                                     $amt = $row['amountdue'];

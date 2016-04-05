@@ -130,6 +130,12 @@ $userid = $_SESSION['user'];
             font-size: 18px;
         }
 
+        .style7 {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 16px;
+            color: #eb9316;
+        }
+
         -->
 
         div#calendar {
@@ -182,25 +188,25 @@ $userid = $_SESSION['user'];
             right: 0px;
         }
 
-        .month-due{
+        .month-due {
             position: absolute;
             top: 0px;
             margin-top: 60px;
         }
 
-        #calendar{
+        #calendar {
             margin-top: 50px;
         }
 
         /*******************************Calendar Content Cells*********************************/
         div#calendar div.box-content {
-                border-top: 5px;
-                padding-bottom: 50px;
-                padding-top: 5px;
-                margin-top: 5px;
-                margin-bottom: 50px;
-                margin: 5px;
-                height: 100px;
+            border-top: 5px;
+            padding-bottom: 50px;
+            padding-top: 5px;
+            margin-top: 5px;
+            margin-bottom: 50px;
+            margin: 5px;
+            height: 100px;
 
         }
 
@@ -265,7 +271,7 @@ $userid = $_SESSION['user'];
             clear: both;
         }
 
-        .box{
+        .box {
             width: 100%;
             left: -21px;
         }
@@ -351,40 +357,41 @@ $userid = $_SESSION['user'];
                     var crkcnt = $(this).data("corkcnt");
                     var price = $(this).data("price");
                     var crkdate = $(this).val();
-                    document.getElementById('li-' + crkdate).style.background = "green";
-                    document.getElementById('li-' + crkdate).title = "(" + crkcnt + "," + price + ")";
                     var d = document.getElementById('li-' + crkdate);
-                    d.className += " highlighteddate";
+                    d.style.background = "green";
+                    d.title = "(" + crkcnt + ", " + price + ")";
+                    d.className = d.className.replace(/\bnormaldate\b/,"highlighteddate");
                 });
 
             </script>
             <center>
-            <div class="month-due">
-                <div class=""><span
-                        class="style6">No. of Corks used for this month&nbsp;:&nbsp;<?php echo $total_cnt ?></span><br/>
+                <div class="month-due">
+                    <div class=""><span
+                            class="style6">No. of Corks used for this month&nbsp;:&nbsp;<?php echo $total_cnt ?></span><br/>
                     <span class="style6">Amount for this month&nbsp;:&nbsp;&nbsp;<i
                             class="fa fa-inr"></i>&nbsp;<?php echo $total_price ?>/-</span>
+                    </div>
                 </div>
-            </div>
             </center>
         </div>
+        <div id="daily-cnt" class="style7"></div>
         <div class="row">
-        <?php
-           $sql_sum = "SELECT  * FROM memberdetails WHERE id='$userid'";
-           $res_sql_sum = mysql_query($sql_sum);
-           $total_price = 0;
+            <?php
+            $sql_sum = "SELECT  * FROM memberdetails WHERE id='$userid'";
+            $res_sql_sum = mysql_query($sql_sum);
+            $total_price = 0;
             while ($row = mysql_fetch_array($res_sql_sum)) {
                 $price = $row['amountdue'];
                 //$total_price += $price;
                 //$corkuseddate = $row['corkuseddate'];
-               
-            } 
-             ?>
-                <span class="style6">Total Amt. to be paid:&nbsp; <i
-                            class="fa fa-inr"></i>&nbsp;<?php echo $price; ?>/-</span>
-                <?php
-        ?>
-    </div>
+
+            }
+            ?>
+            <span class="style6">Total Amt. to be paid:&nbsp; <i
+                    class="fa fa-inr"></i>&nbsp;<?php echo $price; ?>/-</span>
+            <?php
+            ?>
+        </div>
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><br/>
@@ -398,21 +405,19 @@ $userid = $_SESSION['user'];
                 $admin = $row['admin'];
                 $sponsor = $row['sponsor'];
                 //    TODO Dont user mobilenumber in the session, instead id itself can be used everywhere.
-                if ($admin == 'yes'&& $sponsor =='no') {
+                if ($admin == 'yes' && $sponsor == 'no') {
                     ?>
                     <a href="adminhome.php">
                         <button class="btn logi-btnn" id="logi-btnn" type="submit" name="btn-login">DONE</button>
                     </a>
                     <?php
-                }
-                else if ($sponsor == 'yes' && $admin == 'no') {
+                } else if ($sponsor == 'yes' && $admin == 'no') {
                     ?>
                     <a href="sponsorhome.php">
                         <button class="btn logi-btnn" id="logi-btnn" type="submit" name="btn-login">DONE</button>
                     </a>
                     <?php
-                }
-                else { ?>
+                } else { ?>
                     <a href="index.php">
                         <button class="btn logi-btnn" id="logi-btnn" type="submit" name="btn-login">DONE</button>
                     </a>
@@ -426,7 +431,7 @@ $userid = $_SESSION['user'];
         </div>
     </div>
 
-    
+
     <br/>
     <br/>
     <br/>

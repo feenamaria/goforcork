@@ -54,7 +54,7 @@
                         <div class="form-group">
                             <div class="">
                                 <input class="form-control" type="password" name="oldpassword"
-                                       placeholder="enter old password" />
+                                       placeholder="enter old password" maxlength="10" onkeypress='return event.keyCode == 8 || event.keyCode == 13 || event.keyCode !=32'/>
                             </div>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                         <div class="form-group">
                             <div class="">
                                 <input class="form-control" type="password" name="newpassword"
-                                       placeholder="enter new password"/>
+                                       placeholder="enter new password" maxlength="10" onkeypress='return event.keyCode == 8 || event.keyCode == 13 || event.keyCode !=32'/>
                             </div>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
                         <div class="form-group">
                             <div class="">
                                 <input class="form-control" type="password" name="newpassword1"
-                                       placeholder="confirm password"/>
+                                       placeholder="confirm password" maxlength="10" onkeypress='return event.keyCode == 8 || event.keyCode == 13 || event.keyCode !=32'/>
                             </div>
                         </div>
                     </div>

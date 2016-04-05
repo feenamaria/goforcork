@@ -3,6 +3,11 @@
 error_reporting(0);
 session_start();
 $userid = $_SESSION['user'];
+
+if(!isset($_SESSION['cork_distribute_date'])){
+    $_SESSION['cork_distribute_date'] = date('Y-m-d');
+}
+
 //echo $userid;
 //TODO: Check whether admin or not
 if (!$userid) {
@@ -116,9 +121,16 @@ if (!$userid) {
                             <?php
                         }
                         ?>
+
                         <div class="form-group">
                             <div class="">
-
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 style6">
+                                    <div class="stylel">Date:</div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                    <input type="text" class="form-control" name="newdate" value="<?php echo $_SESSION['cork_distribute_date']?>" id="datepicker" autocomplete="off" autofocus required/>
+                                </div>
+                                <br/><br/>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 style6">
                                     <div class="stylel">Cork (<i class="fa fa-inr"></i>)</div>
                                 </div>
@@ -141,82 +153,33 @@ if (!$userid) {
                                     <div class="stylel">Player1:</div>
                                 </div>
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                   <!-- <select name="memberid1" input class="form-control" required/>-->
-                                    <?php
-                                    include('db.php');
-                                    $sql = mysql_query("select * from memberdetails where name like 'f%'");
-                                    while ($row = mysql_fetch_array($sql)) {
-                                        $name = $row['name'];
-                                        $memberid = $row['id'];
-                                        ?>
-                                        <input type="text" class="form-control" name="memberid1">
-                                        <!--
-                                        <option value="<?php echo $memberid ?>"><?php echo $name ?></option>-->
-                                        <?php
-                                    }
-                                    ?>
-                                    </select>
+                                    <input type="text" class="form-control tags" name="memberid1"
+                                           placeholder="enter player1 name" required/>
                                 </div>
                                 <br/><br/>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 style6">
                                     <div class="stylel">Player2:</div>
                                 </div>
-                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                    <select name="memberid2" input class="form-control" required/>
 
-                                    <?php
-                                    include('db.php');
-                                    $sql = mysql_query("select * from memberdetails");
-                                    while ($row = mysql_fetch_array($sql)) {
-                                        $name = $row['name'];
-                                        $memberid = $row['id'];
-                                        ?>
-                                        <option value="<?php echo $memberid ?>"><?php echo $name ?></option>
-                                        <?php
-                                    }
-                                    ?>
-                                    </select>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                    <input type="text" class="form-control tags" name="memberid2"
+                                           placeholder="enter player2 name" required/>
                                 </div>
                                 <br/><br/>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 style6">
                                     <div class="stylel">Player3:</div>
                                 </div>
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                    <select name="memberid3" input class="form-control" required/>
-
-                                    <?php
-                                    include('db.php');
-                                    $sql = mysql_query("select * from memberdetails");
-                                    while ($row = mysql_fetch_array($sql)) {
-                                        $name = $row['name'];
-                                        $memberid = $row['id'];
-                                        ?>
-
-                                        <option value="<?php echo $memberid ?>"><?php echo $name ?></option>
-                                        <?php
-                                    }
-                                    ?>
-                                    </select>
+                                    <input type="text" class="form-control tags" name="memberid3"
+                                           placeholder="enter player3 name" required/>
                                 </div>
                                 <br/><br/>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 style6">
                                     <div class="stylel">Player4:</div>
                                 </div>
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                    <select name="memberid4" input class="form-control" required/>
-
-                                    <?php
-                                    include('db.php');
-                                    $sql = mysql_query("select * from memberdetails");
-                                    while ($row = mysql_fetch_array($sql)) {
-                                        $name = $row['name'];
-                                        $memberid = $row['id'];
-                                        ?>
-                                        <option value="<?php echo $memberid ?>"><?php echo $name ?></option>
-                                        <?php
-                                    }
-                                    ?>
-                                    </select>
+                                    <input type="text" class="form-control tags" name="memberid4"
+                                           placeholder="enter player4 name" required/>
                                 </div>
                                 <br/><br/>
                             </div>
@@ -233,8 +196,7 @@ if (!$userid) {
                         if ($x == $_GET['a']) {
                             ?>
                             <div class="alert alert-success"><a href="#" class="close" data-dismiss="alert"
-                                                                aria-label="close">&times;</a> Cork Alloted
-                                Successfully!!!
+                                                                aria-label="close">&times;</a>Cork Allotted!!!
                             </div>
                             <?php
 
@@ -274,10 +236,34 @@ if (!$userid) {
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="css/js/bootstrap.min.js"></script>
-<script src="css/js/custom.js"></script>
-<script src="css/js/jquery.js"></script>
 <script type="text/javascript">
 </script>
+<script src="js/jquery-1.10.2.js"></script>
+<script src="js/jquery-uiauto.js"></script>
+<script>
+    $(function () {
+        var availableTags = [];
+        <?php
+
+        $sql = mysql_query("select * from memberdetails");
+        while ($row = mysql_fetch_array($sql)) {
+        ?>
+        availableTags.push("<?php echo $row['name']; ?>");
+        <?php
+        }
+        ?>
+        $(".tags").autocomplete({
+            source: availableTags
+        });
+    });
+    $(function() {
+        $( "#datepicker" ).datepicker({dateFormat: "yy-mm-dd",showOtherMonths: true,
+            selectOtherMonths: true});
+    });
+</script>
+<link rel="stylesheet" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/jquery-ui.min.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 </body>
 </html>
